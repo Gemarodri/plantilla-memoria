@@ -30,6 +30,7 @@
 \usepackage{float}  %% H para posicionar figuras
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
+\usepackage{multirow} % para las tablas
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -145,7 +146,7 @@ Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2015
 \pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
-mi familia}
+mi abuelo, Ismael}
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,11 +156,16 @@ mi familia}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 
-Aquí vienen los agradecimientos\ldots Aunque está bien acordarse de la pareja,
-no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo 
-parezca disfrutará tanto de tus logros como tú\ldots Además, la pareja quizás
-no sea para siempre, pero tu madre sí.
+En primer lugar me gustaría empezar agradeciendo a mi familia todo el apoyo constante que he recibido siempre, y la confianza que han depositado en mi desde que decidí adentrarme en el mundo de las Telecomunicaciones. Pero sobre todo me gustaría dejar constancia de lo agradecida que me siento con mis padres, ya que ellos me han sufrido en mis épocas de estrés, y a pesar de eso, siempre me han regalado palabras de ánimo y me brindan grandes consejos constantemente. <Gracias Padres!
 
+Me gustaría agradecer también a todas las personas que comparten mi día a día de un modo u otro, aportándome buenos momentos y haciéndome feliz, gracias a ellos el estudiar, trabajar ó incluso el madrugar se hace mucho mejor.
+
+Llegados a este punto, y mirando todo lo que las telecomunicaciones me ha ofrecido, si volviese a elegir una carrera, no dudo que sería la misma. Las Telecomunicaciones me han ofrecido grandes amigos, experiencias inolvidables como el Erasmus, la importancia del esfuerzo constante, y la posibilidad de conocer a esos grandes profesores, profesores de vocación que hacen que este mundo de la ingeniería y las Telecomunicaciones sea fascinante.
+
+Por último, me gustaría agradecer la ayuda recibida por parte de mi tutor, Jesús, y de mis compañeros.
+
+
+\textit{''El crecimiento es un proceso de prueba y error: es una experimentación. Los experimentos fallidos forman parte del proceso en igual medida que el experimento que funciona bien"- Benjamin Franklin.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
 
@@ -167,22 +173,12 @@ no sea para siempre, pero tu madre sí.
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
-Estamos involucrados en un proyecto de investigación, y como en la mayoría de proyectos de este estilo, es esencial disponer de herramientas que nos faciliten el trabajo de una manera u otra. Por ese motivo, surgió la idea de este proyecto, cuyo objetivo final era desarrollar una herramienta enmarcada en el contexto anteriormente citado y que posteriormente sería validada con nuestro estudio de investigación. 
+Estamos involucrados en un proyecto de investigación relacionado con el campo de conocimiento del Software, que se centra en área del Bug-Seeding. Como en la mayoría de proyectos de este estilo, es esencial disponer de herramientas que nos faciliten el trabajo de una manera u otra. Por ese motivo, y tras obtener una metodología concreta, surgió la idea de desarrollar una herramienta que nos proporcionase ayuda en nuestro análisis.
 
-La herramienta usa diversas tecnologías actuales, que en capítulos posteriores explicaremos, pero se basa principalmente en el uso de dos tecnologías, en el lado del servidor NodeJs y en el lado del cliente, JavaScript.
+En esta memoria se presenta tanto el proyecto de investigación con sus primeras conclusiones como la herramienta que hemos desarrollado actuando de apoyo a nuestra investigación. Las primeras conclusiones y datos obtenidos en este estudio servirán como punto de inflexión para debatir si podemos continuar con la investigación. 
 
-Aquí viene un resumen del proyecto. Ha de constar de tres o cuatro párrafos,
-donde se presente de manera clara y concisa de qué va el proyecto. Han
-de quedar respondidas las siguientes preguntas:
+La herramienta usa diversas tecnologías actuales, que en capítulos posteriores explicaremos, pero se basa principalmente en el uso de tres tecnologías, HTML5 y JavaScript del lado del cliente, y Node.js del lado del servidor. Además, el propio estudio de investigación nos servirá como método de validación para nuestra herramienta.     
 
-\begin{itemize}
-  \item ¿De qué va este proyecto? ¿Cuál es su objetivo principal?
-  \item ¿Cómo se ha realizado? ¿Qué tecnologías están involucradas?
-  \item ¿En qué contexto se ha realizado el proyecto? ¿Es un proyecto
-dentro de un marco general?
-\end{itemize}
-
-Lo mejor es escribir el resumen al final.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
@@ -191,10 +187,11 @@ Lo mejor es escribir el resumen al final.
 %\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
 \markboth{SUMMARY}{SUMMARY} % encabezado
 
-Here comes a translation of the ``Resumen'' into English. Please, double check
-it for correct grammar and spelling. As it is the translation of the ``Resumen'',
-which is supposed to be written at the end, this as well should be filled out
-just before submitting.
+We are involved in a research project, which is related to the area of knowledge of Software that focusing in Bug-Seeding. In this project, we carry out an empirical experiment where analyze the importance of a commit antecesor when a bug was inserted in the code. Generally the tools that facilitate the work in any research project are essentials. For this reason, and after obtained a specific methodology, the idea to develop a tool, that provide us support in our analysis, arose.
+
+In this thesis, the research project with their first conclusions and the tool  developed are shown. Where, the first conclusions and data extracted give us a slight possibility about our idea, allowing for open the debate about of the future of research project.
+
+The tool developed uses various technologies, which will be explained in following chapters. But basically, on client side it uses HTML5 and JavaScript and on server side it uses Node.js. Furthermore, the research project will help us as  validation method for the tool.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -227,63 +224,21 @@ just before submitting.
 \chapter{Introducción}
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
+%[Hablar de las motivaciones que nos han llevado al estudio, el proyecto fin de master lo vamos a enfocar como la realización de una herramienta que nos ayudó en un estudio que estamos realizando y que ademas es validada con el propio estudio]
+%[En la intro ademas de hablar sobre las motivaciones tenemos que hablar sobre la herramienta html5, con sus partes de servidor y usuario en referenciando las secciones en las cuales describimos la herramienta ]
 
-Dentro del desarrollo software, el espíritu de las comunidades de software libre, ha permitido a los desarrolladores investigar como se lleva a cabo el proceso del desarrollo software.
+El software libre y de código abierto, \textit{FLOSS}, nos ofrece la gran ventaja de mejorar continuamente su diseño; los desarrolladores estudian, modifican y mejoran el software gracias a la disponibilidad del código fuente. La evolución de la ingeniería del software libre, ha favorecido la aparición de repositorios de versiones, en los cuales se puede observar la evolución del software, permitiendo de esta manera a los desarrolladores investigar como se lleva a cabo el proceso del desarrollo software. 
 
-[Escribir mucho mas acerca del software libre, y el estado actual del desarrollo software]
+En sistemas  \textit{FLOSS} todo el mundo es bienvenido para contribuir en el desarrollo, tanto desarrolladores noveles como expertos, todos ellos contribuirán a mejorar el software. Por tanto es imposible tratar de prevenir las necesidades de todos ellos así como los errores que aparecerán. Cientos de desarrolladores tendrán que estar activos en las actividades de mantenimiento, corrigiendo errores, añadiendo nuevas características o mejorando las existentes. Por este motivo, se encontró la necesidad de desarrollar el proceso de Bug-Fixing, proceso en el cual se identifica el error y quien contribuyó en su arreglo.    
 
-En este proyecto presentamos una herramienta desarrollada con tecnologías actuales como son Node.js,
-JavaScript, Bootstrap, HTML5 ó CSS3 que nos ayudará posteriormente en un estudio de investigación, será el propio estudio quién valide la herramienta.
+Nuestra contribución se centra en el concepto de bug seeding commit. El concepto Bug Seeding evalúa la cantidad de errores software que residen en un sistema, hallando el momento en el cual el error fue introducido al sistema. [hablar mas sobre bug seeding mencionando herramientas o algo]. El pensamiento actual acerca de la responsabilidad de introducir el error en el código, señala al commit anterior como el responsable, como nos muestran los estudios como los desarrollados por [whitehead, zhimerber] , esta idea preconcebida se encuentra tan generalizada que algunos estudios de investigación parten de ella [mencionar los estudios]. Hasta el momento no hemos descubierto ningún estudio ó investigación empírica que trate de contribuir a este pensamiento generalizado, aportando datos ó porcentajes que muestren en cuantos casos la literatura actual es cierta y en cuantos casos, esta idea no es acorde con los datos.
 
-El estudio de investigación que estamos desarrollando actualmente será explicado con mayor detalle en la sección ~\ref{sec:estudio}, ahora lo describiremos a grandes rasgos para poder entender la necesidad de desarrollar una herramienta como esta.
-En la literatura actual, nuestra investiación se centra en el concepto de bug seeding commit \footnote{Momento en el que un error es introducido en el código}. Es decir, nuestro estudio se enfoca en descubrir el momento en el que un cambio en el código fuente provocó un error, y a partir de ahí, poder identificar al/los responsables de dicho error. Analizar el repositorio de errores de un proyecto, significa tener que repetir una metodología concreta que nos proporcione ciertas características que serán utilizadas posteriormente, obteniendo finalmente unas conclusiones y unos resultados. 
+Es debido a esta carencia en la literatura actual, decidimos desarrollar un estudio. En la investigación se realiza un estudio empírico, explicado con mayor detalle en la sección  ~\ref{sec:estudioexp}, enfocado a descubrir el momento en el que un cambio en el código fuente provocó un error, y a partir de ese momento, poder identificar al/los responsables de dicho error, consiguiendo finalmente una evidencia empírica sobre el número de errores introducidos cuyo responsable fue el commit anterior, y aquellos errores introducidos en los que el commit anterior no tiene ninguna responsabilidad.
 
-En la primera fase del estudio, para poder definir correctamente una metodología, el análisis del repositorio se llevaba a cabo manualmente. Una vez que la metodología estaba acabada y contrastada, nos dimos cuenta que podríamos usar las tecnologías actuales para ayudarnos en nuestra investigación, automatizando una gran parte del análisis del repositorio. Por tanto, la herramienta que en este proyecto mostramos, se encarga de extraer características del repositorio de errores, proporcionar cierta información para tomar decisiones y guardar la información en otro repositorio. (Github)
-  
-Para nuestro estudio, necesitamos analizar repositorios de código, de los cuales extraeremos una serie de características útiles para el estudio. La idea de desarrollar esta herramienta surgió con el fin de disminuir el tiempo de extracción de ciertas características. 
+Analizar un repositorio de versiones como es \textit{SVN} ó \textit{GIT}, implica la repetición constante de una metodología concreta. Por ello nos vimos en la necesidad de desarrollar una herramienta, descrita en la sección \ref{sec:herramienta}, capaz de automatizar la parte cuya repetitividad era elevada, reduciendo así el tiempo de aná lisis. Dicha herramienta es capaz de obtener la información necesaria para realizar nuestro estudio a partir de cierta información relacionada con la notificación de un error.
 
- %\begin{figure}
-   % \centering
-    %\includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    %\caption{Página con enlaces a hilos}
-    %\label{figura:foro_hilos}
- %\end{figure}
-
-%{\footnotesize
-%\begin{verbatim}
-%    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-%    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-%    Date: Fri Jan 14 19:25:51 2005
-%    Subject: [Mailman-Users] mailman issues
-%    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-%
-%    Dear Sir/Madam,
-%    How can people reply to the mailing list?  How do i turn off
-%    this feature? How can i also enable a feature where if someone
-%    replies the newsletter the email gets deleted?
-%    Thanks
-%
-%    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-%    From: msapiro at value.net (Mark Sapiro)
-%    Date: Fri Jan 14 19:49:04 2005
-%    Subject: [Mailman-Users] mailman issues
-%    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-%    Message-ID: <PC173020050114104851057801b04d55@msapiro>
-%
-%    gaurav_gold wrote:
-%    >How can people reply to the mailing list?  How do i turn off
-%    this feature? How can i also enable a feature where if someone
-%    replies the newsletter the email gets deleted?
-%
-%    See the FAQ
-%    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-%    article 3.11
-%\end{verbatim}
-%}
-
-
-
-
+En esta memoria presentamos nuestro primer estudio en el tema de investigación, así como el diseño de una herramienta desarrollada con tecnologías actuales como son HTML5 y Node.js, que nos ayudará posteriormente en la parte de investigación. Esta primera investigación nos servirá para poder validar nuestra herramienta y a la vez, para decidir si nuestro estudio va encaminado por buen camino. 
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OBJETIVOS %
@@ -292,60 +247,83 @@ Para nuestro estudio, necesitamos analizar repositorios de código, de los cuales
 \cleardoublepage
 \chapter{Objetivos}
 \label{chap:objetivos}
+En esta sección intentaremos explicar cual es el objetivo de esta memoria, abarcando desde el objetivo general, hasta los objetivos más específicos. 
 
 \section{Objetivo general}
 \label{sec:objetivo-general}
-El objetivo general de este proyecto, es desarrollar una herramienta que posteriormente sea utilizada para el análisis de investigación que estamos llevando a cabo.
+
+En la presente memoria tenemos dos claros objetivos principales. El primero de ellos se centra en poner en contexto al lector y explicarle cual han sido nuestras motivaciones principales para llevar a cabo el estudio de investigación, en el cual  todavía nos vemos sumergidos. Y el segundo de ellos se centra en mostrar la herramienta que ha sido desarrollada y sirve de apoyo a nuestra investigación.
+
+Ahora bien, el objetivo del estudio de investigación es aportar datos y gráficas que contribuyan en cierta medida a la idea de plantear un nuevo punto de vista en el ámbito del  \textit{Bug Seeding}. Como consecuencia de este estudio, surgió la necesidad de diseñar una herramienta que nos ayudase en nuestro análisis, uniendo aquellos datos que eran de suma importancia y presentándolos de manera simple y atractiva al desarrollador/usuario.  
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
-La herramienta tiene que ser capaz de proporcionarnos mediante llamadas a su propia API, información extraída de los repositorios Launchpad y Gerrit. También, será necesario que el usuario tome decisiones a partir de la información que se presenta el la herramienta, por ello, será necesario que la herramienta proporcione una interfaz de usuario atractiva, agradable y sencilla, en la que el usuario pueda seleccionar la opción adecuada a partir de la información que en ella se despliega. Además, la herramienta debe ser capaz de albergar toda la información extraída para poder sacar posteriormente las gráficas y estadísticas correspondientes.
+En cuanto a los objetivos específicos, debemos diferenciar aquellos objetivos que queremos cumplir en nuestra investigación de aquellos que queremos que la herramienta cumpla.
 
-Debemos Hablar de que es OpenStack y como y donde guarda  los tickets y la revision de código. 
+Los objetivos que nos hemos propuesto cumplir en nuestra investigación son la obtención de datos fiables a través del análisis de un proyecto, llevado a cabo por dos desarrolladores. Las diferentes características extraídas del proyecto ayudarán a la obtención de diversas gráficas. La tendencia que muestran las gráficas y nuestras expectativas al respecto, marcarán un punto de inflexión en nuestro proyecto de investigación, viéndonos en la necesidad de pararnos a pensar y debatir sobre el futuro de la investigación.  
 
+Los objetivos que conciernen a la herramienta son varios, en un principio la necesidad de disminuir el tiempo en la fase de análisis, dió como resultado la herramienta que en esta memoria se detalla en la sección \ref{sec:herramienta}. Herramienta atractiva, agradable y sencilla, capaz de mostrar aquella información relevante para el desarrollador, extraída del proyecto que estamos analizando. Además, la herramienta debe proporcionar una interfaz en la que el usuario, en este caso un desarrollador, pueda tomar decisiones y añadir comentarios, que a su parecer sean relevantes en el análisis. La opción de guardar todos los datos extraídos y la decisión tomada por el desarrollador debe ser un requisito imprescindible en esta herramienta. Para acabar, ya que teníamos que desarrollar esta herramienta, intentamos hacerlo lo más general posible, dándo la oportunidad a que otros proyectos puedan usar nuestra herramienta para su análisis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ESTADO DEL LA TƒCNICA %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Creo que aquí deberíamos escribir que opciones tecnológicas tenemos para poder desarrollar el servidor, el cliente, la interfaz de usuario, la "base de datos (github) \ldots Y el porque hemos elegido cada una de las tecnologías.
-
 \cleardoublepage
 \chapter{Estado de la técnica}
+Este capítulo se encuentra dividido en tres grandes secciones, es el esqueleto central de nuestra memoria. La primera sección será la de precedentes, en la cual hablaremos sobre las motivaciones que nos han llevado a la realización de la inventigación. La segunda sección se centra en explicar el proyecto OpenStack como caso de estudio, profundizando en entender de manera superficial que es y como funciona OpenStack y centrándose más en la explicación de uno de sus componentes, Cinder, ya que este proyecto es nuestro caso de estudio. En la tercera y última sección se describen algunas herramientas que contribuyen en OpenStack como son: Launchpad, Gerrit y Git, de las cuales hemos echo uso para recopilar datos necesarios en nuestro análisis. 
 
-Descripción de las tecnologías que utilizas en tu trabajo. Con dos o tres párrafos por cada tecnología, vale.
-
-
-Puedes citar libros, como el de Bonabeau et al. sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. % Nota que el ~ añade un espacio en blanco, pero no deja que exista un salto de línea. Imprescindible ponerlo para las citas.
+%Puedes citar libros, como el de Bonabeau et al. sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. 
+% Nota que el ~ añade un espacio en blanco, pero no deja que exista un salto de línea. Imprescindible ponerlo para las citas.
 
 %También existe la posibilidad de poner notas al pie de página, por ejemplo, 
 %una para indicarte que visite la página de 
-LibreSoft\footnote{\url{http://www.libresoft.es}}.
+%LibreSoft\footnote{\url{http://www.libresoft.es}}.
+\section{Precedentes}
+\label{sec:precedentes}
 
-\section{OpenStack}
+La literatura actual acerca de la inserción de errores en el código fuente, asienta sus bases en la idea preconcebida de que el error ha sido causado por el commit inmediatamente anterior que cambió las líneas que se vieron involucradas. A partir de esta asunción, se desarrollan multitud de estudios y experimentos relacionados con el Bug-Seeding, Bug-Fixing, ó cualquier tema que involucre el concepto de encontrar quién introdujo el error en el código. 
+
+La idea principal en \cite{pan2009toward} es la búsqueda de patrones de errores resueltos en el código fuente, analizando el código de los ficheros en las diferentes revisiones que nos proporcionadas un sistema SCM, centrandose en la semántica del código fuente.
+
+Estudios como \cite{kim2008classifying} donde se presentan una técnica usada para la predicción de errores latentes en los códigos, separa aquellos cambios en los que el código indica que son errores de aquellos que no son errores. Para ello usan la ayuda del Machine Learning,  identificando de este modo si un nuevo cambio en el código es más \textit{buggy} ó mas \textit{clean}. 
+
+Mientras que en \cite{izquierdo2011developers} se investiga que porcentaje de desarrolladores arreglan sus propios bug sin indicar a los commits anteriores como responsables del error. En  semanal como responsables a los commits previos.
+
+El afán por prevenir los errores en el código ha dado estudios como \cite{zimmermann2005mining} , donde se aplica la minería de datos \textit{Data Mining} a las versiones en un repositorio. Con el objetivo de guiar a los programadores en los cambios realizados, sugiriendo lo que otros desarrolladores han hecho anteriormente. De esta manera consiguen prevenir los errores debidos a cambios incompletos.
+
+Hasta el momento, no hemos encontrado ningún estudio que intente conocer si el commit anterior es el verdadero responsable del error o no, si no que, como ya hemos visto todos los estudios señalan como responsable al commit previo. Es en este punto en el cual se centra nuestro estudio, aportando a la literatura actual un posible nuevo enfoque. Nuestro objetivo no es otro que comprobar empíricamente en cuantos casos la literatura que nos podemos encontrar se cumple y en cuantos casos la literatura podría no ser del todo correcta, centrándonos en la responsabilidad que ejerce el/los commit/s inmediatamente anteriores al error introducido. Además, se analizarán algunas características de los commits que nos ayuden a tomar decisiones como, esta misma idea se encuentra en \cite{sliwerski2005changes}, donde se tiene en cuenta las propiedades halladas en los cambios que ayudaban a conducir a problemas, como por ejemplo el día de realización de los cambios.
+
+En la mayoría de las referencias anteriores, así como en nuestro estudio de investigación, el uso de la herramienta \textit{Diff} sera de gran utilizad. Puesto que lo usaremos para identificar cambios entre revisones. Es mas, los autores del algoritmo SZZ hacen uno de \textit{Diff}. Dicho algoritmo descrito en \cite{sliwerski2005changes}, tiene como propósito determinar el origen de un error identificando el commit que lo arregló, asumen que las lineas que han sido eliminadas o modificadas en el commit que arregló el error son las que responsables del error. \textit{Diff} presenta un pequeño problema que tenvuelve a las líneas que no se modifican, si no que se cambian de lugar, y es que esto puede provocar un error en las características extraídas de los commits. 
+
+En \cite{zimmermann2006mining} presentan un estudio a nivel de linea, identificando las líneas que cambian y como lo hacen a lo largo de las versiones, eliminan el concepto de numero de linea y la sustituyen por nodos en un grafo, un nodo por cada revision, obteniendo de esta forma una mayor información de la vida de las lineas, ya que actualmente todos los sistemas de control de versiones nos devuelven la ultima modificación realizada, perdiendo así información que podría ser util  .
+
+Al igual que nosotros, \cite{kim2008classifying} y  \cite{hindle2008large} entienden que un cambio se puede clasificar dentro de una o varias categorías dependiendo de cual sea la intención de dichos commits. 
+
+
+
+\section{Proyecto OpenStack, caso de estudio}
 \label{sec:openstack}
 
-OpenStack es el nombre asociado a un proyecto software, integramente "Open-Source" o código abierto, cuyo propósito es combinar una serie de proyectos para construir y manejar plataformas de computación en la nube, para nubes tanto publicas como privadas. Principalmente los usuarios lo desarrollan como una infraestructura como servicio, comúnmente conocido como IaaS (Infrastructure as a Service), permitiéndole orquestar y gestionar distintos aspectos . Se distribuye bajo la licencia de Apache y es software libre y distribuido.
+OpenStack es el nombre asociado a un proyecto software, integramente  \textit{Open-Source} ó código abierto, cuyo propósito es combinar una serie de proyectos para construir y manejar plataformas de computación en la nube, para nubes tanto publicas como privadas. Principalmente los usuarios lo desarrollan como una infraestructura como servicio, comúnmente conocido como IaaS (Infrastructure as a Service), permitiéndole orquestar y gestionar distintos aspectos. Se distribuye bajo la licencia de Apache y es software libre y distribuido.
 
-Un aspecto que hace interesante a OpenStack es su capacidad de extensibilidad a través de sencillas APIs, este factor ha hecho posible que muchos proveedores de servicios usen OpenStack como elemento clave de su infraestructura. OpenStack se estaá convirtiendo en una referencia de implementación al construir nubes privadas y póblicas, se encuentra respaldado por grandes empresas como Cisco, Paypal, Webex, Ebay, NASA, Rackspace, Dell, HP, Comcast, Seagate, Intel, AT\&T y NetApp.
+Un aspecto que hace interesante a OpenStack es su capacidad de extensibilidad a través de sencillas APIs, este factor ha hecho posible que muchos proveedores de servicios usen OpenStack como elemento clave de su infraestructura. OpenStack se está convirtiendo en una referencia de implementación al construir nubes privadas y públicas. Se encuentra respaldado por grandes empresas como  \textit{Cisco, Paypal, Webex, Ebay, NASA, Rackspace, Dell, HP, Comcast, Seagate, Intel, AT\&T y NetApp}.
 
 OpenStack ha conseguido, en solo tres años, convertirse en el mayor proyecto libre de IaaS, su éxito puede ser debido al poderoso framework que han creado, haciendo mas cómodo la infraestructura IaaS.  
 
-OpenStack se compone proyectos claramente identificados como parte del núcleo ó 'core', los cuales  están relacionados entre sí y dependen de la versión que se esté utilizando. A continuación se detallan los componentes incluidos en la versión Juno (16 Octubre del 2014), ya que nuestro estudio estando siendo usada esa versión:
+OpenStack se compone de proyectos claramente identificados como parte del núcleo ó  \textit{core}, los cuales  están relacionados entre sí y dependen de la versión que se esté utilizando. A continuación se detallan los componentes incluidos en la versión Juno (16 Octubre del 2014), ya que en nuestro estudio la vesión que estaba siendo usada era esta:
 
 \begin{itemize}
-    \item Compute (Nova): Proporciona máquinas virtuales bajo demanda, también permite gestionar volúmenes de disco a través de uno de sus servicios. él es el controlador de la estructura básica del Cloud. Se encarga de iniciar las instancias de los usuarios y grupos.
-    \item Object Store (Swift): Proporciona almacenamiento de objetos. Nos permite almacenar y recuperar ficheros, realizar copias de seguridad, almacenamiento de audio/vídeo en streamings, etc. Pero no podemos montar sistemas de ficheros basados en NFS. En Swift se incluyen un servidor proxy, un servidor de cuentas de usuario y ciertos procesos ejecutados periódicamente para limpiar datos. 
-    \item Block Storage (Cinder): Proporciona almacenamiento de bloques que se usan en las instancias de OpenStack. Complementa al almacenamiento que nos proporciona Swift.
-    \item Networking (Neutron): Proporciona conectividad de red como servicio, de tal forma que permite alta flexibilidad a los usuarios finales para interconectar y crear sus propias redes.
-    \item Dashboard (Horizon): Proporciona una aplicación web para el manejo de instancias y volúmenes. Permite la comunicación entre las distintas APIs de OpenStack de forma sencilla. No proporciona toda la funcionalidad que podríamos conseguir usando un interprete de comandos, pero todo lo que hace lo hace correcto.
-    \item Identity (Keystone): Servicio usado para la autentificación entre el resto de componentes. Utiliza un sistema de autentificación basado en tokens.
-    \item  Image Service (Glance): Proporciona la búsqueda y recuperación de máquinas virtuales.
-    \item Telemetry Service (Ceilometer) Permite recoger de forma fiable las mediciones de la utilización de recursos físicos y virtuales que comprenden las Clouds que se encuentran desplegadas. Se analizan los datos y se desencadena acciones cuando ciertos criterios definidos se cumplen. 
-    \item Orchestration (Heat): Proporciona ayuda para manejar la infraestructura que se necesita para un servicio de Cloud, para ello realiza peticiones REST y Query a la API.
-    \item Database Service (Trove): Proporciona una base de datos que funciona como un servio de aprovisionamiento de bases de stand relacionales y no relacionales.
-    \item Data Processing (Sahara): Proporciona un medio sencillo para la provisión de un cluster de aplicaciones de datos intensivos en la parte superior de OpenStack.
+    \item Compute,  \textit{Nova}: Proporciona máquinas virtuales bajo demanda, también permite gestionar volúmenes de disco a través de uno de sus servicios. Es el controlador de la estructura básica del  \textit{Cloud}. Se encarga de iniciar las instancias de los usuarios y grupos.
+    \item Object Store,  \textit{Swift}: Proporciona almacenamiento de objetos. Nos permite almacenar y recuperar ficheros, realizar copias de seguridad, almacenamiento de audio/vídeo en streamings, etc. Pero no podemos montar sistemas de ficheros basados en  \textit{NFS}. En Swift se incluyen un servidor proxy, un servidor de cuentas de usuario y ciertos procesos ejecutados periódicamente para limpiar datos. 
+    \item Block Storage,  \textit{Cinder}: Proporciona almacenamiento de bloques que se usan en las instancias de OpenStack. Complementa al almacenamiento que nos proporciona Swift.
+    \item Networking,  \textit{Neutron}: Proporciona conectividad de red como servicio, de tal forma que permite alta flexibilidad a los usuarios finales para interconectar y crear sus propias redes.
+    \item Dashboard,  \textit{Horizon}: Proporciona una aplicación web para el manejo de instancias y volúmenes. Permite la comunicación entre las distintas APIs de OpenStack de forma sencilla. No proporciona toda la funcionalidad que podríamos conseguir usando un interprete de comandos, pero todo lo que hace lo hace correcto.
+    \item Identity,  \textit{Keystone}: Servicio usado para la autentificación entre el resto de componentes. Utiliza un sistema de autentificación basado en tokens.
+    \item  Image Service,  \textit{Glance}: Proporciona la búsqueda y recuperación de máquinas virtuales.
+    \item Telemetry Service,  \textit{Ceilometer} : Permite recoger de forma fiable las mediciones de la utilización de recursos físicos y virtuales que comprenden las Clouds que se encuentran desplegadas. Se analizan los datos y se desencadena acciones cuando ciertos criterios definidos se cumplen. 
+    \item Orchestration,  \textit{Heat}: Proporciona ayuda para manejar la infraestructura que se necesita para un servicio de Cloud, para ello realiza peticiones REST y Query a la API.
+    \item Database Service,  \textit{Trove}: Proporciona una base de datos que funciona como un servio de aprovisionamiento de bases de stand relacionales y no relacionales.
+    \item Data Processing,  \textit{Sahara}: Proporciona un medio sencillo para la provisión de un cluster de aplicaciones de datos intensivos en la parte superior de OpenStack.
 \end{itemize}
 
 La gran comunidad de OpenStack es la encargada oficial de mantener a punto estos sistemas. Cada uno de ellos tiene su propia API para alcanzar una mejor integración. Además, se encuentra bien documentada, soportada por numerosos fabricantes y distribuidores de software. 
@@ -364,11 +342,15 @@ La gran comunidad de OpenStack es la encargada oficial de mantener a punto estos
     \label{figura:JunoStatics}
 \end{figure}
 
-En la imagen~\ref{figura:serviceOpenstack} extraída de \url{http://activity.openstack.org/dash/browser/repository.html?repository=https%3A__bugs.launchpad.net_cinder&ds=its&release=juno} se presenta una visión muy simplificada acerca de la arquitectura de OpenStack, la imagen no muestra la interacción con los consumidores del Cloud.
+En la imagen~\ref{figura:serviceOpenstack} extraída de \url{http://activity.openstack.org/dash/browser/repository.html?repository=https\%3A__bugs.launchpad.net_cinder&ds=its&release=juno} se presenta una visión muy simplificada acerca de la arquitectura de OpenStack, la imagen no muestra la interacción con los consumidores del Cloud.
 
-\subsection{Cinder}
-\label{sec:cinder}
-Originariamente, el código de Cinder se albergaba en Nova bajo la etiqueta de 'nova-volume'. A partir de la version Folsom (27 de septiembre de 2012), se creó el componente Cinder. Este componente de OpenStack es el encargado de proporcionar dispositivos de almacenamiento para instancias de OpenStack. Gestiona el almacenamiento de bloques y manipulando volúmenes y 'snapshots'. El Dashboard que proporciona OpenStack permite a los usuarios gestionar sus propias necesidades de almacenamiento. 
+Como podemos comprobar, OpenStack es un gran proyecto, complejo y que se encuentra en continuo desarrollo. Los datos que lo avalan se pueden ver en la figura ~\ref{figura:JunoStatics}, extraída usando la herramienta Bicho, disponible en \url{http://activity.openstack.org/dash/browser}. En la imágen podemos ver una captura de la web donde encontramos gráficas que muestran las estadísticas relacionadas con la 'release' de Juno. Podemos observar como el elevado número de tickets, de desarrolladores y de commits hacen factible la elección de este gran proyecto como caso de estudio.  
+
+Concretamente, nos centraremos en analizar uno de los componentes de OpenStack, Cinder. Nos pareció más adecuado empezar por analizar uno de sus componentes para, quizás en un futuro, acabar analizando el proyecto entero.
+
+\subsubsection{Cinder:} 
+
+ Originariamente, el código de Cinder se albergaba en Nova bajo la etiqueta de 'nova-volume'. A partir de la version Folsom (27 de septiembre de 2012), se creó el componente Cinder. Este componente de OpenStack es el encargado de proporcionar dispositivos de almacenamiento para instancias de OpenStack. Gestiona el almacenamiento de bloques y manipulando volúmenes y 'snapshots'. El Dashboard que proporciona OpenStack permite a los usuarios gestionar sus propias necesidades de almacenamiento. 
 
 El almacenamiento de bloques es aconsejable usarlo cuando el rendimiento es delicado, por ejemplo en bases de datos, sistemas de archivo expandibles, etc. Cinder tiene su propia Base de Datos en la cual el estado de cada volúmen puede ser encontrado.
 
@@ -381,7 +363,7 @@ Cinder se compone de:
 
 Decidimos analizar el repositorio de Cinder ya que este componente de OpenStack posee gran dinamismo, los errores se reportan en el repositorio que estaá habilitado para ello en Launchpad y los desarrolladores comienzan su labor para intentar solucionarlos. 
 
-En la figura ~\ref{figura:cinderStaticsAll} extraída de \url{http://activity.openstack.org/dash/browser/repository.html?repository=https%3A__bugs.launchpad.net_cinder&ds=its} se muestra diferentes estadísticas sobre la historia de Cinder.  
+En la figura ~\ref{figura:cinderStaticsAll} extraída de \url{http://activity.openstack.org/dash/browser/repository.html?repository=https\%3A__bugs.launchpad.net_cinder&ds=its} se muestra diferentes estadísticas sobre la historia de Cinder.  
 \begin{figure}
     \centering
     \includegraphics[scale=0.35]{img/cinderStaticsAll}
@@ -389,21 +371,53 @@ En la figura ~\ref{figura:cinderStaticsAll} extraída de \url{http://activity.ope
     \label{figura:cinderStaticsAll}
 \end{figure}
 
-\section{Launchpad}
+\section{Herramientas utilizadas}
+\label
+
+Esta sección es la encargada de especificar de que manera OpenStack hace uso de herramientas como son Launchpad, Gerrit y Git. Antes de entrar en detalle en la explicación de cada una de las herramientas, empezaremos por una primera aproximación, relacionando OpenStack con Launchpad, Gerrit y Git.
+
+La comunidad de desarrolladores de OpenStack utiliza Launchpad como herramienta para postear mejoras en el programa, errores en el código, la necesidad de nuevas características, etc. Estos post ó notificaciones se denotarán como tickets a lo largo de esta memoria. Gerrit proporciona un seguimiento personalizado para cada ticket, esta herramienta nos permite poder visualizar los diferentes estados por los que pasan los ficheros involucrados en el ticket hasta obtener la solución correcta. Por último, Git es la herramienta que proporciona un repositorio de almacenamiento de código fuente a OpenStack.
+
+El proceso que sigue un ticket desde que se abre hasta que se cierra, se encuentra el descrito a continuación:
+\begin{enumerate}
+\item Un ticket es creado atendiendo a la necesidad de cierta persona/desarrollador que cree necesario notificar una mejora, un bug, una nueva funcionalidad o algo con cierta relevancia. Ver imágen ~\ref{figura:CinderBug} 
+\item Una serie de desarrolladores son los encargados de rechazar o aceptar el ticket. Si el ticket se acepta, ciertos valores asociados a él como 'status' ó importance', entre otros, cambian.
+\item Aquel desarrollador que crea saber como se puede solucionar el problema/necesidad que se describe en el ticket, se asigna como encargado de resolver dicho ticket. En ese momento se abre un hilo de seguimiento de dicho ticket en Gerrit.
+\item En Gerrit el encargado añade el código que soluciona el problema, este código debe pasar unos tests y ser aprobado por varios desarrolladores encargados de supervisar que el cambio propuesto no dañe al programa.  Ver imágen ~\ref{figura:Gerrit} 
+\item Una vez que el código es aceptado por los desarrolladores y pasa las pruebas de test, se incorpora al código almacenado en un repositorio Git. 
+\end{enumerate}
+
+Puede suceder también que en algunos casos, los tickets abiertos no sean aceptados, sean abandonados ó sean asignados a varias personas a lo largo del ciclo del ticket.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.35]{img/CinderBug}
+    \caption{Aspecto de los tickets en Cinder}
+    \label{figura:CinderBug}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.35]{img/Gerrit}
+    \caption{Aspecto de Gerrit para un ticket}
+    \label{figura:Gerrit}
+\end{figure}
+
+\subsection{Launchpad}
 \label{sec:launchpad}
 Es una plataforma, lanzada por Canonical Ltd. en Enero de 2004, de desarrollo colaborativo de software libre. 
 Es un servicio gratuito con una interfaz web desde la cual puedes ver reportes de errores, en el caso en que quisieras reportar, comentar o subir nuevos errores deberías registrarte como usuario. Nos referiremos a estos reportes en secciones posteriores como tickets. 
 
 Launchpad consta de varios componentes
 \begin{itemize}
-    \item Code: Aloja el código fuente usando el sistema de control de versiones llamado Bazaar.
+    \item Code: Aloja el código fuente usando un sistema de control de versiones.
     \item Bugs: Permite un sistema de seguimiento de errores para informar sobre errores o bugs en diferentes distribuciones y productos. 
     \item Blueprints: Sistema de seguimiento usado para nuevas características, funcionalidad ó procesos. 
     \item Translations: Sistema destinado a la traducción de aplicaciones.
     \item Answers: Foro destinado a la ayuda de la comunidad, en él se resuelven dudas planteadas.
 \end{itemize}
 
-Cada proyecto dentro de OpenStack tiene su propia página en la Launchpad, la figura ~\ref{figura:LaunchpadCinder} muestra la página que usa Cinder en Launchpad, cuya url es \url{https://launchpad.net/cinder}
+Cada proyecto dentro de OpenStack tiene su propia página en la Launchpad, la figura ~\ref{figura:LaunchpadCinder} muestra la página que usa Cinder en Launchpad \url{https://launchpad.net/cinder}
 
 \begin{figure}
     \centering
@@ -412,7 +426,7 @@ Cada proyecto dentro de OpenStack tiene su propia página en la Launchpad, la fig
     \label{figura:LaunchpadCinder}
 \end{figure}
  
-\section{Git}
+\subsection{Git}
 \label{sec:git}
 Git es un sistema de control de versiones distribuido escrito originalmente en C y desarrollado por Linus Torvalds y otraos colaboradores para manejar el kernel de Linux. Distribuido significa que no hay ninguna copia central del repositorio .
  
@@ -431,9 +445,9 @@ Un factor clave para nuestra investigación es que Git no se borra información. E
     \label{figura:GitVersions}
 \end{figure}
 
-\section{Gerrit}
+\subsection{Gerrit}
 \label{sec:gerrit}
-Cuando muchos desarrolladores trabajan en un mismo proyecto, el código se ve sometido a constantes cambios que pueden provocar que la build  se rompa, este es uno de los problemas que tiene Git, ya que su desarrollo es en raíz o trunk, dónde pueden coexistir lineas de desarrollo denominadas como trunk (tronco) y branchs (ramas). 
+Cuando muchos desarrolladores trabajan en un mismo proyecto, el código se ve sometido a constantes cambios que pueden provocar que la  \textit{build} se rompa, este es uno de los problemas que tiene Git, ya que su desarrollo es en raíz o trunk, dónde pueden coexistir lineas de desarrollo denominadas como  \textit{trunk} (tronco) y  \textit{branchs} (ramas). 
 
 Git no permite un control centralizado, por tanto no permite bloquear cambios que pueden dañar la buid, y se recurre a sistemas como Github ó Gerrit para conseguir estas funcionalidades. 
 
@@ -441,135 +455,43 @@ Gerrit es una herramienta gratuita de revision de código colaborativa a través d
 
 Con Gerrit, tendríamos nuestros repositorios Git en local y un repositorio remoto albergado en sitios como Github, dónde haríamos push y pull para recoger o enviar los cambios.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TECNOLOGêAS USADAS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
 \chapter{Tecnologías Usadas}
-En esta sección hablaremos sobre las tecnologías que hemos usado en el desarrollo de nuestra herramienta. comentaremos sus caracteísticas he intentaremos dar una visión detallada sobre cada una de ellas.
 
-\section{JavaScript} 
-\label{sec:javaScript}
-JavaScript es un lenguaje de programación, lenguaje de scripting multiplataforma y orientado a objetos, utilizado principalmente en la creación de páginas web dinámicas. 
-Ahora bien, ¿ Qué es una página web dinámica?. Es aquella que incorpora efectos como texto que aparecen y desaparecen, incluye animaciones, acciones activadas a través de botones y ventanas de avisos dirigidas hacia el usuario.
+Esta sección se encuentra dedicada a las tecnologías que se han visto envueltas en la creación de nuestra herramienta. Como ya hemos dicho, nuestra herramienta hace uso de dos tecnologías principales, la primera del lado del cliente es HTML5 que agrupa las nuevas tecnologías de desarrollo de aplicaciones web como HTML5, CSS3, Bootstrap y nuevas capacidades de JavaScript, y la segunda tecnología es Node.js usada como servidor.
 
-En el lenguaje JavaScript no es necesario compilar los programas, puesto que es un lenguaje de programación interpretado. Es decir, podemos usar cualquier navegador para probar nuestros programas, sin necesidad de procesos intermedios.
+Por tanto, en esta sección se hablará de las tecnologías usadas en el cliente, la tecnología que trabaja como servidor y como ambas partes, cliente-servidor, se intercambian los datos haciendo uso de la API y de JSON.
 
-Principalmente, el uso de JavaScript se encuentra en el lado del cliente, permitiendo mejoras en la interfaz de usuario. En sus inicios solamente se podían realizar operaciones en el marco de aplicacón del cliente, pero actualmente y gracias a tecnologías como AJAX, puede enviar y recibir información del servidor. 
-\subsection{Historia}
-\label{sec:historiaJS}
-En los años 90 debido a la baja velocidad de los módems y a la incrusión de formularios en las páginas webs surgió la necesidad de crear un lenguaje de programación que se ejecutase en el navegador del usuario reduciendo así el tiempo de espera en caso de error en el formulario. 
+\section{Tecnologías usadas en el Navegador} 
+\label{sec:clientSide}
+A continuación se describen cada una de las tecnologêas que son usadas en la herramienta desde el navegador y que forman lo que se conoce como el lado del cliente.
 
-La solución a este problema la encontó Brendan Eich, programador que trabajaba en NetScape, adaptando tecnologías existentes como ScripEase al navegador Netscape Navigator 2.0. Este lenguaje fue denominado inicialmente como LiveScript.
-
-Posteriormente, Netscape firmó un acuerdo con Sun Microsystems para desarrollar un nuevo lenguaje de programación, al que llamaron JavaScript justo antes de ser lanzado. Razón meramente comercial ya que la palabra Java estaba de moda en aquella época.
-
-La primera versión de JavaScript fué un éxito, tanto que Microsoft la copió bajo el nombre de Script y la incluyó en su navegador Internet Explorer 3.
-
-En 1997, Netscape dedició estandarizar el lenguaje JavaScript y evitar de esta forma una guerra de tecnologías. ECMA (European Computer Manufacturers Association) creó el comité TC39 con el objetivo de estandarizar un lenguaje de script multiplataforma e independiente de cualquier empresa. El primer estándar se denominó ECMA-262, en el cual se definió por primera vez el lenguaje ECMAScript. Por tanto, JavaScript no es más que la implementación que realizó Netscape del estándar ECMAScript. 
-
-\subsection{Características}
-\label{sec:JsCaracteristicas}
-Para integrar JavaScript en documentos XHTML solamente es necesario encerrar el código JavaScript entre las etiquetas <script> e incluirlas en cualquier parte del documento. Para que la página XHTML sea válida, se necesita añdir el atributo type a la etiqueta <script>, ya que los valores que incluye type se encuentran estandarizados, text/javascript es el valor correcto para el caso de JavaScript. También tenemos la posibilidad de definir el código JavaScript en un archivo externo y enlazarlo mediante la etiqueta <script> en el XHTML, añadiendo el atributo src, indicando la ruta hacia el archivo, a la etiqueta <script>. 
-
-Las principales características que posee JavaScript son:
-
-\begin{itemize}
-    \item Tipado Dinámico: El tipo de la variable se encuentra asociado al valor y no a la variable ya que se trata de un lenguaje scripting. De esta forma podemos tener una variable, x, ligada a una cadena de caracteres y posteriormente, relegada a un valor float. 
-    \item Objetual: JavaScript estaá formado mayoritariamente por objetos, Estos objetos son arrays asociativos, mejorados con la inclusión de prototipos. En tiempo de ejecución podemos crear, cambiar o eliminar las propiedades y sus valores.  
-    \item Evaluación en tiempo de ejecución: Existe una función eval que permite evaluar expresiones en tiempo de ejecución
-    \item Funciones de primera clase: A las funciones se le suele conocer como ciudadanos de primera clase; son objetos en si mismos. Por ello, como objetos que son, posee propiedades y métodos. Existe la posibilidad de anidar funciones. Y aparece el término de clausura ligado a la invocación de funciones externas.
-    \item Prototípos: En JavaScript se usan prototipos en lugar de clases para el uso de herencia.
-    \item Funciones como constructores de objetos: Las funciones se pueden comportar como constructores, creando instancias de un prototipo, heredando propiedades y métodos del constructor.
-    \item Entorno de ejecución: Normalmente, JavaScript depende del entorno en el que se ejecute para poder ofrecer objetos y métodos.
-    \item Funciones como métodos: No existe diferencia entre la definición de función  y la definición de método. Una función puede ser llamada como un método de un objeto, usando la palabra clave this como variable local a la función que representa al objeto que la invocó.
-    
-\end{itemize}
-
-\section{jQuery} 
-\label{sec:jquery}
-jQuery es una de las biblioteca de JavaScript más utilizadas, creada el 26 de agosto de 2006 por John Resig, tiene como propósito facilitar la manera de interactuar con los documentos HTML, manipular el árbol DOM , manejar eventos y agregar la interacción con la técnica AJAX a páginas web .
-
-JQuery es software libre y de código abierto, ofrece funcionalidades, "atajos", basadas en el lenguaje JavaScript, logrando grandes resultados en un menor tiempo y ocupando menos espacio de código.
-
-Consiste en un único fichero JavaScript con las funcionalidad comunes del DOM, eventos, efectos y AJAX. Su característica principal es que a través de peticiones AJAX y manipulando el árbol DOM, podemos lograr que el contenido de la web cambie sin necesidad de recargar la página.
-
-La forma de interactuar con la página es usando la función jQuery(), normalmente se identifica con el alias \$(). Esta función nos permite acceder a los elementos del DOM, recibe como parámetro el nombre de una etiqueta HTML ó una expresión CSS y devuelve todos los elementos del DOM que cumplan la expresión. Las funciones que proporciona la biblioteca pueden ser aplicadas a cualquiera de los nodos que nos devuelva la función. 
-
-Para usar jQuery lo único que debemos hacer es añadir la librería de jQuery a nuestra página, la librería puede ser descargada previamente ó incluida desde uno de los servidores de Google que nos la ofrece. 
-
-\section{GitHub.js}
-\label{sec:github.js}
-Github.js es una librería de JavaScript que nos proporciona un "envoltorio" de alto nivel entorno a los comandos de git. Cuenta con una API diseñada para manipular los repositorios de GitHub a nivel de archivo.
-
-Si queremos trabajar con esta biblioteca, debemos proporcionarle acceso a la API HTTP de GitHub mediante un protocolo de autenticación. Para ello, se requiere generar un token que será utilizado junto con el mecanismo de autenticación OAuth, mecanismo soportado por esta biblioteca. 
-
-\section{JSON}
-\label{sec:json}
-JavaScript Object Notation ó JSON, es una alternativa a XML en AJAX, que permite representar estructuras de datos en formato ligero para el intercambio de datos. Al requerir menos caracteres para representar la misma información, consume menos ancho de banda.
-
-Una de las grandes ventajas que aporta este formato, a parte de consumir menos ancho de banda, es que parsearlo es mucho mas sencillo. Es decir, escribir un analizador sintáctico requiere menos esfuerzo si usamos un texto JSON, es más, existen funciones como 'eval()' en JavaScript que sirven para dicho propósito, analizar textos JSON. 
-
-\section{NodeJS} 
-\label{sec:node}
-
-Google desarrolló un interprete ultra rápido escrito en C++ para Chrome, pudiendo descargar e incorporar el motor JavaScript V8 a cualquier aplicación que deseemos, ya que se ejecuta en el navegador. Node hace uso de este motor V8 JavaScript dándole otro propósito para ser usado en el servidor. 
-
-Node es una plataforma reciente, basada en ejecutar JavaScript en el lado del servidor. Tiene el concepto de agregar módulos a su mismo núcleo. Hay cientos de módulos que se pueden agregar a Node, y si no existe, podríamos desarrollarlo.
-
-En el lado del servidor, la programación es orientada a eventos, estos eventos no se inician de la misma forma que en el lado del cliente ya que no se pulsan botones o se inserta texto, pero a un nivel superior, lo que se está ejecutando son eventos. En el lado del servidor, los eventos se inician con "streams" o flujo de datos entrantes, cuando se realiza una conexión, cuando se está recibiendo datos a través de esa conexión o cuando se dejan de recibir datos.
-
-\subsection{Características}
-\label{sec:nodeCaracteristicas}
-
-Node cambia la forma en la que una conexión es realizada con el servidor, de tal forma que en vez de generar un nuevo hilo para cada conexión, lo que se dispara en cada conexión es un evento dentro del proceso del motor de Node. Gracias a esto, Node puede asegurar que soporta decenas de miles de conexiones concurrentes, y nunca se quedará en un punto muerto ya que no permite bloqueos. 
-
-Node ha sido diseñado para soportar gran cantidad de tráfico, con una lógica y procesamiento requerido que no necesita ser demasiado grande en la parte del servidor. 
-
-Node es perfecto para ofrecer:
-\begin{itemize}
-    \item API RESTful: Podemos implementar un servicio Web que facilita una API RESTful, de la cual toma unos parámetros y los interpreta, devolviendo la respuesta al usuario, normalmente una cantidad pequeña de texto. No requiere una cantidad de lógica,. por tanto pude construirse para dar servicio a multitud conexiones.     \end{itemize}
-
-Node implementa los protocolos de comunicación más habituales en redes, tales como HTTP,DNS, TLS, SSL, etc.
-
-Algunos ejemplos de empresas que usan Node son LinkedIn, la empresa ha reducido el número de servidores que tenían funcionando al pasar a usar NodeJs. Otras de las empresas que han optado por usar Node son Microsoft, eBay ó la red social Geekli.st.
-
-\subsection{Tecnologías y frameworks basados en NodeJS}
-\label{sec:frameworksNode} 
-Existen diversos proyectos muy interesantes cuyo funcionamiento esta basado en Node, a continuación los comentaremos:
-
-\begin{itemize}
-    \item Meteor JS: Es un framework destinado a crear aplicaciones Web programado en JavaScript, se ejecuta sobre el motor de NodeJs.
-    \item SocketStream: Es un framework diseñado para soportar aplicaciones de una Web en tiempo real ó Realtime SPAs (Single Padge Apps). Más enfocado hacia el cliente, permite usar plantillas y módulos en el lado del cliente.
-    \item Yeoman: Es una herramienta que simplifica la tarea de crear proyectos, ofrece multitud de utilidades basadas en librerías y frameworks habituales como Bootstrap, BackboneJs \ldots 
-\end{itemize}
-   
-
-\section{HTML5} 
+\subsection{HTML5} 
 \label{sec:html5}
 Es la quinta versión de del lenguaje HTML, lenguaje utilizado para la creación de páginas web que se encuentra regulado por el Consorcio W3C.
 
-En las webs actuales que usan HTML5, se pueden encontrar etiquetas y atributos nuevos, así como nuevas funcionalidades como son audio y video. Algunas etiquetas han sido eliminadas y otras como la etiqueta <canvas>  ha sido mejorada, permitiendo renderizar elementos 3D en los navegadores Chrome, Firefox, Opera, Safari e Internet Explorer. 
+En las webs actuales que usan HTML5, se pueden encontrar etiquetas y atributos nuevos, así como nuevas funcionalidades como son audio y video. Algunas etiquetas han sido eliminadas y otras como la etiqueta  \textit{<canvas>}  ha sido mejorada, permitiendo renderizar elementos 3D en los navegadores Chrome, Firefox, Opera, Safari e Internet Explorer. 
 
 La versión 5 de HTML es completamente compatible con la versión anterior, HTML4, de tal manera que las webs que usan HTML4 segurán funcionado en HTML5. Antes de HTML5 se usaba la tecnología Flash para proporcionar al navegador  de audio, video, webcams, animaciones vectoriales \ldots Ahora con HTML5 no serán necesarios más plugins. 
 
-\subsection{Novedades}
+\subsubsection{Novedades}
 \label{sec:Novedades}
  \begin{itemize}
     \item Incorpora etiquetas con codecs para mostrar los contenidos multimedia.
-    \item Incorpora mejoras en los formularios, creando nuevos tipos de datos como (eMail, number, url, datetime \ldots ) 
-    \item Incorpora una nueva funcionalidad Drag \& Drop que permite arrastrar objetos como si fuesen imágenes.
+    \item Incorpora mejoras en los formularios, creando nuevos tipos de datos como  \textit{eMail, number, url, datetime \ldots} 
+    \item Incorpora una nueva funcionalidad  \textit{Drag \& Drop} que permite arrastrar objetos como si fuesen imágenes.
     \item Incorpora etiquetas para manejar grandes conjuntos de datos.
-    \item Añade etiquetas como <header>, <footer>, <article> ... para manejar la Web Semántica.
+    \item Añade etiquetas como  \textit{<header>, <footer>, <article> }... para manejar la Web Semántica.
     \item Incorpora una nueva API de Geolocalización para los dispositivos que la soporten.
-    \item Incorpora una API Srorage que nos da la posibilidad de almacenamiento persistente en local.
+    \item Incorpora una API Storage que nos da la posibilidad de almacenamiento persistente en local.
     \item Incorpora una API para la comunicación bidireccional entre páginas, llamada WebSockets.
 \end{itemize}
 
-\section{CSS3} 
+\subsection{CSS3} 
 \label{sec:css3}
 Es la tercera versión de las hojas de estilo en cascada o CSS, mediante estas hojas podemos definir las reglas y los estilos de representación en diferentes dispositivos capaces de mostrar contenidos web. El manejo de CSS es imprescindible para cualquier desarrollador web, ya que le permite definir y diseñar de manera eficiente la representación de la página. El Objetivo principal de CSS es separar el contenido de la forma.
 
@@ -590,7 +512,7 @@ En la url  \url{http://www.css3.info/preview/} se encuentra detalladas todas las
     \item Animaciones: Aparece la posibilidad de realizar efectos que sólo estaban disponibles con otros tipos de tecnologías.
 \end{itemize}
 
-\section{Bootstrap} 
+\subsection{Bootstrap} 
 \label{sec:bootstrap}
 Fué desarrollado inicialmente en el año 2011 por el equipo de ingeniería de Twitter, para resolver las inconsistencias en el desarrollo web. Fomentando así la utilización del mismo framework para minimizar inconsistencias, minimizando de esta manera los fallos y aumentando tanto el flujo de trabajo como la eficacia. 
 
@@ -598,8 +520,8 @@ En Agosto del 2011 se lanzó al público como un proyecto Open Source en Github, l
 
 Bootstrap es una colección de elementos y funciones web como HTML, CSS y JavaScript que pueden personalizarse, están empaquetadas y son accesibles a através de una herramienta. Nos permite crear interfaces de usuario adaptables a cualquier dispositivo y  pantalla.
 
-Actualmente se encuentra en la version 3.3.5, pero desde la version Bootstrap 3 lanzada en Agosto del 2013, se ha mejorado el diseño, personalización y la gestión de errores. Es totalmente compatible con los navegadores Google Chrome, Safari, Mozilla Firefox, Internet Explorer y Opera.
-\subsection{BootStrap 3}
+Actualmente se encuentra en la version 3.3.5, pero desde la version Bootstrap 3 lanzada en Agosto del 2013, se ha mejorado el diseño, personalización y la gestión de errores. Es totalmente compatible con los navegadores  \textit{Google Chrome, Safari, Mozilla Firefox, Internet Explorer y Opera}.
+\subsubsection{BootStrap 3}
 \label{sec:Bootstrap3}
 
 Esta versión nos aporta una gran variedad de nuevas características como son:
@@ -610,49 +532,318 @@ Esta versión nos aporta una gran variedad de nuevas características como son:
     \item Insertar imágenes que pueden adaptan su tamaño.
 \end{itemize}
 
-%figura~\ref{fig:arquitectura}.
-%
-%\begin{figure}
-%  \centering
-%  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura}
-%  \caption{Estructura del parser básico}
-%  \label{fig:arquitectura}
-%\end{figure}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% APLICACIONES %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{JavaScript} 
+\label{sec:javaScript}
+JavaScript es un lenguaje de programación, lenguaje de scripting multiplataforma y orientado a objetos, utilizado principalmente en la creación de páginas web dinámicas. 
+Ahora bien, ¿ Qué es una página web dinámica?. Es aquella que incorpora efectos como texto que aparecen y desaparecen, incluye animaciones, acciones activadas a través de botones y ventanas de avisos dirigidas hacia el usuario.
 
-\cleardoublepage
-\chapter{Aplicaciones}
+En el lenguaje JavaScript no es necesario compilar los programas, puesto que es un lenguaje de programación interpretado. Es decir, podemos usar cualquier navegador para probar nuestros programas, sin necesidad de procesos intermedios.
 
-La literatura actual acerca de la inserción de errores en código abierto, asienta sus bases en la idea preconcebida de que el error ha sido causado por el commit inmediatamente anterior. A partir de esta asunción, se ha desarrollado numerosos estudios acerca de que factores contribuyen a un mayor aumento de la inserción de errores, se han desarrollado diferentes herramienta que clasifican dichos errores ... [añadir literatura Whitewead Zimmerbeg..].[ Hablar sobre las conclusiones obtenidas dependiendo de la comunidad que se estudia, analizando los repositorios disponibles (OpenStack, Bugzilla...) en cada estudio/paper]
+Principalmente, el uso de JavaScript se encuentra en el lado del cliente, permitiendo mejoras en la interfaz de usuario. En sus inicios solamente se podían realizar operaciones en el marco de aplicacón del cliente, pero actualmente y gracias a tecnologías como AJAX, puede enviar y recibir información del servidor. 
+
+\subsubsection{Historia}
+\label{sec:historiaJS}
+En los años 90 debido a la baja velocidad de los módems y a la incrusión de formularios en las páginas webs surgió la necesidad de crear un lenguaje de programación que se ejecutase en el navegador del usuario reduciendo así el tiempo de espera en caso de error en el formulario. 
+
+La solución a este problema la encontó Brendan Eich, programador que trabajaba en NetScape, adaptando tecnologías existentes como ScripEase al navegador Netscape Navigator 2.0. Este lenguaje fue denominado inicialmente como LiveScript.
+
+Posteriormente, Netscape firmó un acuerdo con Sun Microsystems para desarrollar un nuevo lenguaje de programación, al que llamaron JavaScript justo antes de ser lanzado. Razón meramente comercial ya que la palabra Java estaba de moda en aquella época.
+
+La primera versión de JavaScript fué un éxito, tanto que Microsoft la copió bajo el nombre de Script y la incluyó en su navegador Internet Explorer 3.
+
+En 1997, Netscape dedició estandarizar el lenguaje JavaScript y evitar de esta forma una guerra de tecnologías. ECMA  \textit{European Computer Manufacturers Association} creó el comité TC39 con el objetivo de estandarizar un lenguaje de script multiplataforma e independiente de cualquier empresa. El primer estándar se denominó ECMA-262, en el cual se definió por primera vez el lenguaje ECMAScript. Por tanto, JavaScript no es más que la implementación que realizó Netscape del estándar ECMAScript. 
+
+\subsubsection{Características}
+\label{sec:JsCaracteristicas}
+Para integrar JavaScript en documentos XHTML solamente es necesario encerrar el código JavaScript entre las etiquetas  \textit{<script>} e incluirlas en cualquier parte del documento. Para que la página XHTML sea válida, se necesita añdir el atributo type a la etiqueta  \textit{<script>}, ya que los valores que incluye type se encuentran estandarizados,  \textit{text/javascript} es el valor correcto para el caso de JavaScript. También tenemos la posibilidad de definir el código JavaScript en un archivo externo y enlazarlo mediante la etiqueta  \textit{<script> } en el XHTML, añadiendo el atributo src, indicando la ruta hacia el archivo, a la etiqueta   \textit{<script>.} 
+
+Las principales características que posee JavaScript son:
+
+\begin{itemize}
+    \item Tipado Dinámico: El tipo de la variable se encuentra asociado al valor y no a la variable ya que se trata de un lenguaje scripting. De esta forma podemos tener una variable, x, ligada a una cadena de caracteres y posteriormente, relegada a un valor float. 
+    \item Objetual: JavaScript estaá formado mayoritariamente por objetos, Estos objetos son arrays asociativos, mejorados con la inclusión de prototipos. En tiempo de ejecución podemos crear, cambiar o eliminar las propiedades y sus valores.  
+    \item Evaluación en tiempo de ejecución: Existe una función eval que permite evaluar expresiones en tiempo de ejecución
+    \item Funciones de primera clase: A las funciones se le suele conocer como ciudadanos de primera clase; son objetos en si mismos. Por ello, como objetos que son, posee propiedades y métodos. Existe la posibilidad de anidar funciones. Y aparece el término de clausura ligado a la invocación de funciones externas.
+    \item Prototípos: En JavaScript se usan prototipos en lugar de clases para el uso de herencia.
+    \item Funciones como constructores de objetos: Las funciones se pueden comportar como constructores, creando instancias de un prototipo, heredando propiedades y métodos del constructor.
+    \item Entorno de ejecución: Normalmente, JavaScript depende del entorno en el que se ejecute para poder ofrecer objetos y métodos.
+    \item Funciones como métodos: No existe diferencia entre la definición de función  y la definición de método. Una función puede ser llamada como un método de un objeto, usando la palabra clave this como variable local a la función que representa al objeto que la invocó.
+    
+\end{itemize}
+
+\subsection{jQuery} 
+\label{sec:jquery}
+jQuery es una de las biblioteca de JavaScript más utilizadas, creada el 26 de agosto de 2006 por John Resig, tiene como propósito facilitar la manera de interactuar con los documentos HTML, manipular el árbol DOM , manejar eventos y agregar la interacción con la técnica AJAX a páginas web .
+
+JQuery es software libre y de código abierto, ofrece funcionalidades, "atajos", basadas en el lenguaje JavaScript, logrando grandes resultados en un menor tiempo y ocupando menos espacio de código.
+
+Consiste en un único fichero JavaScript con las funcionalidad comunes del DOM, eventos, efectos y AJAX. Su característica principal es que a través de peticiones AJAX y manipulando el árbol DOM, podemos lograr que el contenido de la web cambie sin necesidad de recargar la página.
+
+La forma de interactuar con la página es usando la función jQuery(), normalmente se identifica con el alias \$(). Esta función nos permite acceder a los elementos del DOM, recibe como parámetro el nombre de una etiqueta HTML ó una expresión CSS y devuelve todos los elementos del DOM que cumplan la expresión. Las funciones que proporciona la biblioteca pueden ser aplicadas a cualquiera de los nodos que nos devuelva la función. 
+
+Para usar jQuery lo único que debemos hacer es añadir la librería de jQuery a nuestra página, la librería puede ser descargada previamente ó incluida desde uno de los servidores de Google que nos la ofrece. 
+
+\subsection{GitHub.js}
+\label{sec:github.js}
+Github.js es una librería de JavaScript que nos proporciona un "envoltorio" de alto nivel entorno a los comandos de git. Cuenta con una API diseñada para manipular los repositorios de GitHub a nivel de archivo.
+
+Si queremos trabajar con esta biblioteca, debemos proporcionarle acceso a la API  \textit{HTTP} de GitHub mediante un protocolo de autenticación. Para ello, se requiere generar un token que será utilizado junto con el mecanismo de autenticación OAuth, mecanismo soportado por esta biblioteca. 
+
+\section{Tecnología usada en el servidor}
+\label{sec:servidor}
+En esta sección se detalla la tecnología Node.js usada como servidor por la herramienta.
  
-Hasta el momento, no hemos encontrado ningún estudio que trate de demostrar lo anterior partiendo de que no todos los commits inmediatamente anteriores podrían ser los causantes del error introducido. Es en este punto en el cual se centra nuestro estudio, aportando a la literatura actual un posible nuevo enfoque. Nuestro objetivo no es otro que comprobar empíricamente en cuantos casos la literatura es cierta y en cuantos casos la literatura podría no ser del todo correcta, centrándonos en la responsabilidad que ejerce el/los commit/s inmediatamente anteriores al error introducido.
+\subsection{NodeJS} 
+\label{sec:node}
 
+Google desarrolló un interprete ultra rápido escrito en  \textit{C++} para Chrome, pudiendo descargar e incorporar el motor JavaScript  V8 a cualquier aplicación que deseemos, ya que se ejecuta en el navegador. Node hace uso de este motor V8 JavaScript dándole otro propósito para ser usado en el servidor. 
+
+Node es una plataforma reciente, basada en ejecutar JavaScript en el lado del servidor. Tiene el concepto de agregar módulos a su mismo núcleo. Hay cientos de módulos que se pueden agregar a Node, y si no existe, podríamos desarrollarlo.
+
+En el lado del servidor, la programación es orientada a eventos, estos eventos no se inician de la misma forma que en el lado del cliente ya que no se pulsan botones o se inserta texto, pero a un nivel superior, lo que se está ejecutando son eventos. En el lado del servidor, los eventos se inician con  \textit{"streams"} o flujo de datos entrantes, cuando se realiza una conexión, cuando se está recibiendo datos a través de esa conexión o cuando se dejan de recibir datos.
+
+\subsubsection{Características}
+\label{sec:nodeCaracteristicas}
+
+Node cambia la forma en la que una conexión es realizada con el servidor, de tal forma que en vez de generar un nuevo hilo para cada conexión, lo que se dispara en cada conexión es un evento dentro del proceso del motor de Node. Gracias a esto, Node puede asegurar que soporta decenas de miles de conexiones concurrentes, y nunca se quedará en un punto muerto ya que no permite bloqueos. 
+
+Node ha sido diseñado para soportar gran cantidad de tráfico, con una lógica y procesamiento requerido que no necesita ser demasiado grande en la parte del servidor. 
+
+Node es perfecto para ofrecer:
+\begin{itemize}
+    \item API RESTful: Podemos implementar un servicio Web que facilita una API RESTful, de la cual toma unos parámetros y los interpreta, devolviendo la respuesta al usuario, normalmente una cantidad pequeña de texto. No requiere una cantidad de lógica,. por tanto pude construirse para dar servicio a multitud conexiones.     \end{itemize}
+
+Node implementa los protocolos de comunicación más habituales en redes, tales como  \textit{HTTP,DNS, TLS, SSL}, etc.
+
+Algunos ejemplos de empresas que usan Node son LinkedIn, la empresa ha reducido el número de servidores que tenían funcionando al pasar a usar NodeJs. Otras de las empresas que han optado por usar Node son  \textit{Microsoft, eBay} ó la red social  \textit{Geekli.st}.
+
+\subsubsection{Tecnologías y frameworks basados en NodeJS}
+\label{sec:frameworksNode} 
+Existen diversos proyectos muy interesantes cuyo funcionamiento esta basado en Node, a continuación los comentaremos:
+
+\begin{itemize}
+    \item Meteor JS: Es un framework destinado a crear aplicaciones Web programado en JavaScript, se ejecuta sobre el motor de NodeJs.
+    \item SocketStream: Es un framework diseñado para soportar aplicaciones de una Web en tiempo real ó Realtime SPAs,  \textit{Single Padge Apps}. Más enfocado hacia el cliente, permite usar plantillas y módulos en el lado del cliente.
+    \item Yeoman: Es una herramienta que simplifica la tarea de crear proyectos, ofrece multitud de utilidades basadas en librerías y frameworks habituales como Bootstrap, BackboneJs \ldots 
+\end{itemize}
+   
+\section{Tecnologías de intercambio de datos}
+\label{sec:intercambio}
+En esta sección se detalla las tecnologías que son usadas como forma de intercambio entre el cliente y el servidor.
+
+\subsection{JSON}
+\label{sec:json}
+JavaScript Object Notation ó JSON, es una alternativa a XML en AJAX, que permite representar estructuras de datos en formato ligero para el intercambio de datos. Al requerir menos caracteres para representar la misma información, consume menos ancho de banda.
+
+Una de las grandes ventajas que aporta este formato, a parte de consumir menos ancho de banda, es que parsearlo es mucho mas sencillo. Es decir, escribir un analizador sintáctico requiere menos esfuerzo si usamos un texto JSON, es más, existen funciones como  \textit{'eval()'} en JavaScript que sirven para dicho propósito, analizar textos JSON. 
+
+\subsection{API usada}
+\label{sec:api}
+La herramienta hace uso de diferentes APIs a través de llamadas a urls, desde el lado del cliente se crean llamadas a su propia API la cual, en ocasiones formula peticiones a otras APIs devolviendo la respuesta procesada en formato JSON hacia el cliente.
+
+\subsubsection{API Herramienta}
+\label{sec:apiherrramienta}
+En la herramienta se ha implementado un APIRestFul, mediante la cual, a través de eventos programados en el lado del cliente se realizan una serie de llamadas, usando funciones y parámetros, a la API de la herramienta. 
+Uno de los principales motivos por los cuales desarrollamos una APIRestful es el problema del  \textit{'Cross Domain Call'}. Un Cross Domain Call, es un mecanismo de seguridad de comunicaciones entre los navegadores actuales, evita que un script o una aplicación de una página web pueda acceder a un servidor web diferente del que residen. Debido a que nuestra aplicación necesita extraer información de otros servidores diferentes al que reside, nos vimos obligados a crear la esta APIRestful ,mediante la cual hacemos peticiones a nuestras API y es el servidor quien se encarga de formular las peticiones a las APIs de las webs que no residen en nuestro servidor.
+  
+A continuación pasaremos a describir cada una de las funciones programadas en el lado del cliente que nos proporcionan la información que el usuario necesita.
+
+\begin{itemize}
+    \item get(/random): Se usa para la obtención de tickets aleatorios, para ello, el servidor realiza una petición url a la página de Launchpad, la cual parsea y extrae de ella los primeros 75 tickets, que devuelve en formato JSON.
+    \item get(/random/moreTickets): Se usa para la obtención de los siguientes tickets aleatorios, funciona igual que la anterior, pero obteniendo diferentes tickets.
+    \item get(/ticket/\{idTicket\}): Se usa para obtener datos referentes a un ticket como son la descripción, el titulo, los comentarios y el link a la Launchpad. Al llegar al servidor, éste se encarga de formular una petición a la API de launchpad usando el identificador del ticket obtenido como parámetro anteriormente.
+    \item get(/ticket/\{idTicket\}/messages/) : Se usa para obtener todos los comentarios e los que dispone un ticket. Al llegar al servidor, éste se encarga de formular una petición a la API de launchpad usando el identificador del ticket obtenido como parámetro anteriormente.
+     \item get(/ticket/\{idTicket\}/SeeData): Se usa para obtener los datos que han sido almacenados sobre un ticket en un repositorio concreto de Github, haciendo uso de la API de github al llegar al servidor.
+    \item get(/tickets/\{nameOfFile\}/statistics): Se usa para obtener el parámetro que hace referencia a la clasificación del ticket que ya ha sido analizado y se encuentra almacenado en el repositorio de Github. Para ello, al igual que en el caso anterior el servidor usa la API de Github para obtener la información.
+    \item get(/review/\{numReview\}):  Se usa para obtener la información relativa a la revisión de código de un ticket, como son la descripción de cada uno de los cambios propuestos y el identificador del cambio. Al llegar al servidor, éste se encarga de formular una petición a la API de gerrit usando el identificador dl la revisión de código de un ticket, obtenido como parámetro anteriormente.
+    \item get(/commit/\{idCommit\}/files): Se usa para obtener infromación sobre los ficheros que han estado involucrados en el commit. Para ello, el servidor hace una petición a la API de Gerrit usando algunos parámetros obtenidos en esta llamada.
+    \item get(/commit/\{idCommit\}/aboutcommit):  Se usa para obtener infromación sobre algunas características relevantes del commit implicado, como son la descripción del mismo o el identificador del commit padre. Para ello, el servidor hace una petición a la API de Gerrit usando algunos parámetros obtenidos en esta llamada.
+\end{itemize}
+\subsubsection{API GitHub}
+\label{sec:apiGithub}
+Para usar la API de Github a través de OAuth, es necesario usar OAuth con una proxy de autenticación. En nuestra aplicación usamos la biblioteca 'Hellojs', ya que nos permite este tipo de autenticación sobre GitHub. Previamente hemos tenido que registrar la aplicación con Github.
+
+Los detalles sobre OAuth en la API de Github se encuentran en \url{https://developer.github.com/v3/oauth/}, a continuación solo mencionaremos aquellas peticiones que hemos implementado en nuestra herramienta.
+\begin{itemize}
+    \item https://raw.githubusercontent.com/\{usuario\}/\{repo\}/\{rama\}/\{archivo\}: Nos devuelve el contenido almacenado que ha sido guardado en un fichero de texto en nuestro repositorio asociado al proyecto en Github. 
+\end{itemize}
+
+\subsubsection{API Launchpad}
+\label{sec:apilaunchpad}
+La API de launchpad se encuentra detallada en \url{https://api.launchpad.net/1.0.html}, a continuación solo se mencionarán aquellas llamadas que hemos usado en nuestra aplicación.
+\begin{itemize}
+   \item https://api.launchpad.net/1.0/bugs/\{numBug\} : Obtiene en formato JSON todas las características relacionadas con el ticket a través del identificador del ticket 'numBug'
+    \item https://api.launchpad.net/1.0/bugs/\{numBug\}/messages: Obtiene en formato JSON cada uno de los comentarios relacionados con el ticket a través del identificador del ticket 'numBug'
+
+\end{itemize}
+\subsubsection{API Gerrit}
+\label{sec:apiGerrit}
+La API de Gerrit se encuentra detallada en \url{https://gerrit-review.googlesource.com/Documentation/rest-api.html}, a continuación solamente detallaremos aquellas llamadas que han sido usadas en nuestra aplicación.
+\begin{itemize}
+    \item http://review.openstack.org/changes/\{idGerrit\}/detail : Obtiene en formato JSON todas las características relacionadas con la revisión del cambio a través del identificador asociado a la revision 'idGerrit' de un ticket.
+    \item http://http://review.openstack.org/changes/\{idGerrit\}/revisions/\{idPatch\}/commit: Obtiene en formato JSON todas las características del commit asociado a un cambio 'idPatch'  a través del identificador de la revision 'idGerrit' de un ticket.
+    \item http://review.openstack.org/changes/\{idGerrit\}/revisions/\{idPatch\}/files: Obtiene en formato JSON todas las características de los ficheros que han estado involucrados en el commit asociado a un cambio 'idPatch'  a través del identificador de la revision 'idGerrit' de un ticket.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%HERRAMIENTA Y ESTUDIO QUE LA VALIDE %
+%ESTUDIO  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Herramienta y estudio que la valide}
+\chapter{Estudio Realizado}
 
-\section{Herramienta} 
-\label{sec:herramienta}
-La herramienta consta de dos partes claramente diferencias, el Back-End y el Front-End, ambas partes se comunican a través un API RESTful que nosotros mismos hemos creado atendiendo a nuestras necesidades, de esta forma obtenemos los recursos que necesitamos en cada momento. 
+En este capítulo nos centraremos en describir el estudio de investigación que hemos llevado a cabo, detallando cada una de las dos fases de las que consta. La primera fase denominada como fase de filtrado, en la cual descartamos aquellos tickets, que bajo nuestro criterio no son considerados como tickets de error, de los tickets que estamos seguros de que describen un error. La segunda fase denominada como fase de responsabilidad inmediata, en la cual aparece la responsabilidad del commit antecesor en la aparición del error. 
 
-Nos referimos a Front-End como las estructuras "HTML", Estilos "CSS" e interacciones "JavaScript" encargadas de transformar todo "el diseño" web mediante código que no necesita ser procesado para ejecutarse. Actualmente herramientas como AJAX y Websockets nos permiten comunicarnos con la parte del Back-End. 
+\section{Objetivos} 
+\label{sec:objetivo}
 
-Se conoce como Back-End al encargado implementar la capa de datos, trabajando con lenguajes y gestores base de datos como "PHP, ASP, JAVA" y "MySQL, Postgres, SQL Server, MongoDB", respectivamente.  Para ello usa frameworks como Django y Ruby on Rails o interpretes como NodeJS, que permiten consultas a base de datos remotos, en los que se realizan envío de formularios, inicios de sesión, registros, etc. y se transmite la información a través del código realizado por el Front-End al lado del cliente.  
+En esta seción explicaremos en que se basa nuestro estudio, la descripción será más detallada que la proporcionada en capitulos previos. Si queremos saber más acerca del estudio, en los anexos, podemos encontrar un paper en el que se explica el estudio empírico que estamos llevando a cabo. Empezaremos introduciendo algunos de los conceptos y familiarizándonos con palabras que serán nombradas continuamente a lo largo de este capítulo.
 
-En nuestra herramienta, el Back-End usa el interprete de NodeJs, actuará como servidor, encargandose de realizar peticiones a otras APIs, concretamente a la API de Launchpad \url{https://api.launchpad.net/1.0.html} y la API de Gerrit \url{https://gerrit-review.googlesource.com/Documentation/rest-api.html}. También se encargará de atender las peticiones de su propia API, que llegan desde el cliente, enviando toda la información requerida al Front-End en formato JSON.
+El objetivo principal es estudiar el número de casos en los cuales el error ha sido causado por el commit inmediatamente anterior. Entendiendo por commit un cambio realizado en el código fuente que lleva asociado un identificador único.  A causa de la falta de evidencia empírica que encontramos en la literatura actual acerca del tema que queremos tratar, hemos realizado un estudio observacional que engloba el análisis de 100 tickets extraídos del repositorio de Cinder. Un ticket es el nombre que se da a la evolución escrita sobre un error encontrado en el código, el cual se reporta con un identificador único en un repositorio destinado para ello, en nuestro caso, Launchpad. Cuando hablamos de commit, nos referimos al identificador que muestra un cambio realizado en el estado de ficheros de un repositorio.
 
-Mientras que el frontend tiene varias tecnologías coexistiendo, el estilo y estructura de la página viene definido por Bootstrap, HTML5 y CSS3, mientras que la funcionalidad de la herramienta es trabajo de JavaScript y sus bibliotecas JQuery y Githug.js . Los Request son enviados a través de eventos programados en los botones de los que el usuario dispone, de esta forma, la interfaz de usuario es mas amigable e intuitiva, o por lo menos esa es nuestra idea.
+El estudio consta de dos fases, la primera fase tiene como objetivo la obtención de una clasificación de los  tickets analizados, dicha clasificación consta de tres categorías: 'Es un error', 'No es un error', y 'No podemos saberlo'. Cada uno de los tickets pertenecerá a una de estas categorías en base a los criterios establecidos y a la opinión personal de los desarrolladores tras obtener ciertas características sobre él.  
+La segunda fase, se centra en el estudio de aquellos tickets que han sido categorizados como 'Es un error'. Obteniendo finalmente una nueva clasificanción de estos tickets acorde con de la responsabilidad del commit ó commits antecesores. Dicha clasificación también tiene tres nuevas categorías: 'Es responsable', 'No es responsable' y 'No lo podemos saber'. Es esta última clasificación la que nos proporcionará los datos necesarios para poder demostrar empíricamente en cuantos casos el commit antecesor es el responsable del error.
 
-[Hablar del repositorio GIT asociado a la herramienta]
+\subsection{Primera fase ó Filtrado}
+\label{subsec:fase1}
+
+En esta primera fase, colaboran dos desarrolladores realizando el mismo análisis paralelamente, de esta forma la clasificación de cada ticket no se ve involucrada por la opinión ó comentarios de la otra persona. Dicho análisis consta de la extracción aleatoria de 100 tickets residentes en la Launchpad de Cinder cuya url se encuentra disponible en  \url{https://bugs.launchpad.net/cinder}. Los tickets poseen diferentes estados dependiendo de su evolución, desde que se reporta un error hasta que alguien arregla el error:
+
+\begin{itemize}
+    \item New: Es cuando un ticket acaba de ser notificado en la Launchpad.
+    \item Incomplete: Es cuando el informe del error esta incompleto y necesita mas información para poder ser clasificado dependiendo de sus prioridades.
+    \item Invalid: Es cuando la notificación del error describe un comportamiento normal del software, o cualquier otro motivo que haga inválido al ticket.
+    \item Confirmed: Es cuando un miembro de la comunidad distinto a quien reportó el ticket, acepta la descripción del ticket, en este momento cualquier desarrollador podría trabajar en una solución.
+    \item In progress: Es cuando un desarrollador ha tomado la responsabilidad del corregir el error y está trabajando en ello.
+    \item Fix Committed: Es cuando un desarrollador ha realizado un commit con la solución al código base del proyecto.
+    \item Fix Released: Es cuando una nueva versión del software, con la corrección del error, ha sido lanzada.
+\end{itemize}
+ 
+Nosotros solamente estamos interesados en aquellos tickets cuyo estado sea  \textit{'Fix Committed'} ó  \textit{'Fix Released'}, ya que solamente en esos casos es cuando el error ha sido arreglado y los cambios realizados en el código son visibles, por tanto restringiremos la búsqueda de los tickets aleatorios a aquellos cuyo estado sea  \textit{'Fix Committed'} ó  \textit{'Fix Released'}. Como ya hemos comentado anteriormente, cada ticket posee un identificador único, será con ese identificador con el cual reconoceremos al ticket en el Launchpad. El ticket contiene toda la información relativa al error que se ha reportado como, el identificador del error en el Launchpad, la descripción del error, la persona encargada de arreglar el error y una serie de comentarios a través de los cuales se va viendo el proceso de evolución del ticket. En la mayoría de los casos, obtenemos además la descripción del commit, el identificador del commit y la url de Gerrit, donde tenemos disponible la revisión del código. 
+
+A pesar de toda la información de la que disponemos en el Launchpad, para nuestro análisis en esta primera fase, solamente necesitamos conocer el título y descripción del ticket y cual es la url de Gerrit asociada a este ticket para extraer de ella información relacionada con el commit que arregló el error como es el identificador del commit, el identificador del commit padre, los ficheros implicados y la descripción del commit. Con toda esta información los desarrolladores deben de ser capaces de clasificar el ticket en una de las tres categorías.
+
+Esta primera fase tiene gran relevancia puesto que es aquí donde separamos los tickets que son error de aquellos que no lo son. Esto es muy importante, ya que nuestro estudio se centra en analizar si el commit inmediatamente anterior ha sido el responsable del error. Por tanto, si lo que analizamos es un ticket en el que no se notifica un error, el estudio será erróneo. Por este motivo, a continuación detallaremos cada uno de los campos de información extraídos  y que nos ayudan a tomar la decisión en la primera clasificación.
+                                                 
+Normalmente, un buen ticket debería tener un titulo claro, una descripción detallada sobre lo que actualmente esta fallando, y una descripción, que iría ligada al commit, en la que se detallase cual ha sido la solución que ha arreglado el error.. Cuando nos encontramos con tickets que cumplan lo anteriormente mencionado, podemos estar seguros de que el ticket realmente notifica un verdadero error. En la imagen ~\ref{fig:description} se puede apreciar la descripción visual de lo que es un buen ticket de error. En él aparece un título que contiene una palabra que nos puede indicar que se trata de un error, pero es en la descripción cuando efectivamente corroboramos que se trata de un error puesto que describe detalladamente que es lo que estaá fallando y además, propone una solución.  
+Pero no siempre es tan sencillo como lo hemos descrito anteriormente, ya que suele ser común encontrarnos la misma descripción para el ticket y para la descripción del commit, en esos casos, tendremos que revisar detalladamente el código, analizando el estado de los ficheros implicados antes y después de que el posible error fuera solucionado, para ello será necesario obtener el identificador del commit que realiza el parche y el identificador de su commit padre. El commit padre es lo que hemos llamado como commit inmediatamente anterior al actual ó commit antecesor.
+
+\begin{figure}
+  \centering
+   \includegraphics[scale=0.5]{img/Description}
+  \caption{Ticket claramente clasificado como 'Es un error'}
+  \label{fig:description}
+\end{figure}
+
+A continuación detallaremos como obtener la información manualmente, a estas alturas ya sabemos que cada ticket posee un identificador único en Launchpad, nos referiremos a él como  \textit{'n\_ticket'}. Con este identificador, podemos obtener toda la información acerca del error en la web \url{https://bugs.launchpad.net/cinder/+bug/n_ticket}. El titulo, el identificador del commit y la url de Gerrit asociada a ese ticket, a veces puede encontrarse dentro de un comentario en la misma página bajo el titulo de  \textit{'Fix merged to cinder (master)', 'Fix proposed to cinder (master)'} ó  \textit{'Fix merged to cinder (\{Branch\})'}, el título depende del estado del commit dentro del repositorio. En alguna ocasión, el problema descrito en el ticket afecta a varios componentes de OpenStack y no siempre se añaden los parches a todos los repositorios de dichos componentes, por tanto podemos encontrarnos con tickets que no nos proporcionen la url de Gerrit en Cinder.  
+
+OpenStack nos proporciona una interfaz web donde encontramos el Gerrit Code Review system, ahí podemos encontrar los cambios propuestos y revisarlos en \url{https://review.openstack.org/ }. Concretamente, podemos encontrar la revisión del código para cada 'n\_ticket' que queremos analizar en \url{https://review.openstack.org/#/c/n_review}, donde 'n\_review' es el identificador de revisión único para cada 'n\_ticket'. En la revision del código se muestra toda la información acerca del parche que arregló el error. 
+
+Este estudio puede ser considerado como un estudio empírico a baja escala, puesto que solamente se analizan 100 tickets, uno de los principales motivos para no realizar el estudio con un número elevado de tickets fue el carácter manual que tenía la investigación es sus inicios. Los desarrolladores eran los encargados de analizar los tickets manualmente hasta encontrar la metodología apropiada, a pesar de que solamente se han analizado 100 tickets, se encontraron muchas diferencias entre ellos en cuanto a extraer datos ó incluso tomar decisiones. Debido a este motivo, nos vimos obligados a definir unos criterios básicos, los cuales dan respuesta a ciertas situaciones que pueden suceder al analizar un ticket. 
+
+A continuación se describe como actuar si nos encontramos ante alguna de estas situaciones, explicando el motivo que nos ha llevado a definir ese criterio.
+
+\begin{itemize}
+\item ¿ El commit sólamente ha modificado ficheros de tests ? No es un error. Uno de nuestros criterios marca que no debemos analizar los ficheros de test, ya que comprendemos que cada modificatción que se realiza en el código debe llevar asociada su correspondiente comprobación, es decir, código que compruebe que funciona, dandole consistencia al programa. El repositorio de Cinder, existe un directorio con el nombre de 'tests' y es bajo ese directorio donde se encuentran los ficheros con el código que realiza las comprobaciones. Por tanto, entendemos que si algo falla solamente en los ficheros de test, se debe a que el error se encuentra en el código del fichero de test y no en los ficheros del programa. Por esta misma razón, los ficheros de test que se encuentren involucrados en un commit no serán analizados y por tanto no los incluiremos como parte de la investigación.
+\item ¿ Si el ticket notifica una nueva funcionalidad ? No es un error. No consideraremos las nuevas funcionalidades como errores, bajo nuestro criterio no es un fallo del programa, si no una mejora. Algunas personas podrían pensar que la falta de algunas funcionalidades en el programa implica un error, por eso lo notifican en un ticket. Pero esa no es es nuestra creencia, y por tanto no lo consideraremos como un error. 
+Ademas de las nuevas funcionalidad, todos aquellos tickets que notifiquen optimización del código ó eliminación de código muerto estarían bajo los mismos criterios que las nuevas funcionalidades. 
+\item ¿ El título del ticket describe un comportamiento inesperado ? Es un error. Ocasionalmente, el ticket describe un comportamiento inesperado en funcionalidades que no afectan al comportamiento general del programa. Por este motivo podríamos pensar inicialmente que si no afecta al funcionamiento principal del programa no es un error, pero hemos decidido que lo consideraremos como un error, puesto que se se ha llegado a implementar algo y después no funciona como se espera, es un error, a pesar de que no afecte al funcionamineto general del programa. 
+\item ¿ El título del ticket describe que se requieren actualizaciones ? Es un error. La naturaleza del código es evolucionar, por tanto lo mas normal es que el código necesite ser actualizado, evolucionar en versiones, etc. En esos casos, consideraremos que el ticket está notificando un error ya que si no se actualiza, el programa no funcionará adecuadamente y causará errores.
+\end{itemize}
+
+En ocasiones, y debido quizás a la falta de experiencia, falta de conocimientos sobre el tema descrito en el ticket ó la escasez de información obtenida, no seremos capaces de decidir si un ticket es un error o no lo es, por ese motivo tenemos el tercer grupo llamado 'No podemos saberlo', en este grupo se encontrarán todos aquellos tickets que son difíciles de clasificar.
+
+Una vez que ambos desarrolladores acabaron de analizar y clasificar cada uno de los 100 tickets, los resultados deben ser comparados y comentados por ambas partes. Ambas clasificaciones puede tener tres posibles estados de similitud referente a cada ticket, estos estados son:
+\begin{itemize}
+\item Estado de similitud: Se da cuando ambos desarrolladores coinciden en su clasificación sobre un ticket. 
+\item Estado de similitud moderada: Se da cuando uno de los desarrolladores ha clasificado el ticket bajo la etiqueta 'No lo podemos saber', mientras que el otro ha optado por una de las otras dos categorías.
+\item Estado de similitud crítica: Se da cuando ambas clasificaciones para un mismo ticket son contrarias, es decir, un desarrollador lo clasifico como 'Es un error' mientras el otro optó por clasificarlo como 'No es un error'.
+\end{itemize}
+
+Uno de los objetivos de este estudio es obtener unos resultados fiables, por tanto decidimos que la clasificación final fuese obtenida comparando las dos clasificaciones anteriores. De esta forma, en los tickets con similitud moderada y con similitud crítica, ambos desarrolladores deben debatir argumentando sus posiciones y llegar de esta manera a una conclusión final. Si por el contrario, no eran capaces de llegar a ninguna acuerdo en alguno de los tickets, se propuso albergar ese ticket en la categoría 'No lo podemos saber'.
+
+En la comparativa de los resultados de clasificación, se dieron 80 estados de similitud, 16 estados de similitud moderada y 4 de similitud crítica. Después de debatir sobre aquellos tickets en los que ambos desarrolladores diferían, se llegó a un acuerdo en 13 de los casos, mientras que para 7 de ellos las opiniones de cada desarrollador seguían siendo diferentes. 
+
+Tras esta fase, obtenemos una primera clasificación, cuyos datos se presentan y se comentan en la sección ~\ref{sec:resultadosF2}
+
+\subsection{Segunda fase ó Responsabilidad inmediata}
+\label{subsec:fase2}
+
+En la segunda fase, solo nos centraremos en los ticket que hayan sido clasificados dentro del grupo 'Es un Error', ya que de esta forma nos estamos asegurando que todo el análisis posterior es válido. Además, asumimos el error que estamos cometiendo al no tener en cuenta los ticket del grupo ' No lo sabemos' , ya que puede suceder que hayamos clasificado ticket que notificaban errores de verdad en el grupo 'No lo sabemos'. Aún así, decidimos obviar a ese grupo ya que el porcentaje de tickets pertenecientes a ese grupo es bajo, entorno al 16\%, por tanto creemos que no sería de suma importancia tenerlos en cuenta en los resultados finales pero asumimos estar cometiendo un error. 
+
+A partir de este momento, la parte más difícil comienza. Nos centraremos en analizar los commits involucrados e identificar quien ha sido el responsable del error. Para ello tenemos que identificar cuales son los ficheros involucrados y dentro de ellos, cuales son las líneas que han sido modificadas, eliminadas ó añadidas.
+
+Cuando hablamos de líneas añadidas, entendemos que son lineas que antes de solucionar el error no se encontraban en el/los fichero/s pero con el fin del arreglar el error, han tenido que ser añadidas. Lo mismo sucede con las lineas eliminadas, para solucionar el error, los desarrolladores encargados del ticket han tenido que eliminar lineas del código. Hasta este momento no hay ninguna duda para poder identificar estas líneas, el problema comienza al intentar identificar líneas que han sido modificadas, ya que el concepto de línea modificada puede ser ambiguo. 
+
+En el código pueden realizarse multitud de cambios que impliquen una modificación de código, por eso debemos dejar claro que es lo que nosotros entendemos por código modificado en este estudio. Para nosotros, el código modificado engloba a aquellas líneas en las que cambia algo, el nombre de una variable, las condiciones del bucle, los argumentos de la función, \ldots etc. Pero no entendemos que el código haya sido modificado en aquellos casos en los que se borra código de un lado para añadirlo en otro sitio, ó incluso cuando se elimina código para volverlo a escribir idénticamente. A pesar de nuestros pensamiento a cerca de lo que entendemos por código modificado, el uso de la herramienta \textit{Diff}, nos complica demasiado poder diferenciar el código modificado según nuestro concepto, ya que considera los últimos casos descritos anteriormente como código modificado, por tanto, en nuestro análisis, tendremos que considerar como código modificado aquellas líneas en las que aparezca cïdigo eliminado y código añadido conjuntamente. 
+
+El análisis que se ha llevado a cabo en esta fase, se centra en definir el número de ficheros implicados, el tipo de código que se ha encontrado en dichos ficheros y el número de commits anteriores que se han encontrado. A pesar de que el objetivo es averiguar cuantos de los commits previos implicados en un cambio son responsables, hemos decidido analizar las demás características para obtener más información, de esta manera, podrímos tener en cuanta otras variables que nos ayuden en futuros análisis.
+
+Al igual que en la primera fase, en esta también hemos definido ciertos criterios a seguir para identificar la responsabilidad del commit previo ante la insercción de un error. A continuación aparecen algunos casos en los que podríamos encontrarnos antes de analizar el commit, por tanto el criterio a seguir es el siguiente.
+\begin{itemize}
+\item ¿ El ticket notificaba una actualización ? No hay responsable. Entendemos que la naturaleza del código es evolucionar, por tanto si se requiere una actualización nadie puede ser el responsable. Y los commits previos que se hayan encontrado quedan exentos de responsabilidad.
+\item ¿ El commit que arregla en error no se ha llevado a cabo en el repositorio de Cinder ? No sabemos si es responsable, ya que el parche se ha ejecutado en otro repositorio que no es el de Cinder, por tanto no tenemos acceso al identificador del commit. En ocasiones esto sucede debido a que el error afecta a varios componentes de OpenStack, y el cambio que arregla el error se ha ejecutado en uno de los repositorios que pertenecen a esos componentes. 
+\end{itemize}
+
+Si el ticket no se encuentra en ninguna de las situaciones anteriores, tendremos que analizar los commits implicados y el código en detalle. Para analizar el tipo de código usado en el parche y los ficheros que están involucrados, hacemos uso de GIT, sistema de control de versiones distribuido que nos proporciona commandos útiles para el análisis del código.
+
+Para empezar nuestro análisis, lo primero que hemos hecho es clonar el repositorio de Cinder localmente, usando el comando 'git clone'. Después, hemos elegido uno de los tickets y hemos extraído el identificador del commit que arregló el error, y el identificador del commit padre, es decir, el identificador del commit anterior antes de que el error fuese arreglado. También hemos extraído el nombre de los ficheros que han sido involucrados.  Usamos el comando  \textit{'git checkout id\_commit'} para cambiar entre los diferentes estados de los ficheros. Empezamos en el estado actual, cuando el error ya ha sido arreglado, para obtener el/los identificador/es del commit/s previos al cambio para cada línea afectada en el fichero. Para ello, usamos el comando 'git blame file', así obtenemos el commit y el nombre del autor que ha modificado cada una de las líneas del fichero por última vez,  finalmente  guardamos la salida obtenida en un fichero de texto. En segundo lugar, debemos cambiar al estado del fichero antes de que el error fuese arreglado, realizando otro  \textit{'git checkout id\_commitPadre'} y realizamos el mismo procedimiento para acabar comparando los ficheros que hemos guardado con la salida obtenida tras el 'git blame file'.
+
+Una vez que hemos guardado los ficheros tenemos que compararlos para saber en que líneas se encuentran las diferencias entre ambos y así, saber que commits previos son los presuntos responsables del error. Usamos el comando  \textit{'diff fichero1 fichero2'} para mostrar  \textit{linea\-a\-linea} las diferencias entre los dos ficheros,. Diff es un algoritmo extensamente explicado teóricamente en \cite{ukkonen1985algorithms} y \cite{myers1986ano}, el cual nos proporciona sistemas de gestión de gran cantidad de código fuente. Esta herramienta examina ambos ficheros y nos devuelve los cambios que necesita realizar el primer fichero para coincidir con el segundo fichero, es decir, nos está devolviendo las diferencias entre ellos, mostrándo el número de lineas.
+
+La imagen ~\ref{fig:diff} muestra la salida del comando diff al comparar ambos ficheros, en esta salida se puede ver tres partes diferenciadas. En los recuadros coloreados de azul, aparece el número de línea del primer fichero una letra  \textit{'c'} y el número de línea del segundo fichero. La letra  \textit{'c'} indica que se debe realizar un cambio en dichas líneas de los ficheros. El cambio que se debe hacer en el primer fichero es eliminar las líneas recuadradas en color verde he introducir las líneas  recuadradas en color rojo. Por tanto, ya podemos identificar a los posibles commits antecesores responsables del error, en este caso, para ambas líneas es el mismo commit  \textit{'663eadfb'}.
+
+\begin{figure}
+  \centering
+   \includegraphics[scale=0.45]{img/diff}
+  \caption{Salida que muestra el comando diff entre dos ficheros}
+  \label{fig:diff}
+\end{figure}
+
+Tras seguir el procedimiento descrito anteriormente, obtenemos una lista de commits con los posibles responsables del error. El siguiente paso es analizar cada uno de los commits y clasificarlos en uno de estos tres grupos, dependiendo de su responsabilidad en la aparición del error. 
+\begin{enumerate}
+    \item Es el responsable : Cuando tenemos claro que el commit ha provocado el error.
+     \item No es el responsable : Cuando tenemos claro que el commit no ha provocado el error.
+    \item No sabemos si es responsable : Cuando no somos capaces de identificar si el commit ha provocado el error o no.
+\end{enumerate}
+
+Como es normal, un parche realizado en el código para solventar el error, puede tocar varios ficheros y en cada fichero podría estar implicado mas de un commit previo diferente. Por tanto, podemos tener situaciones en las que el responsable del error sea mas de un commit previo.
+
+Una vez que estamos analizando los commits implicados, podríamos encontrarnos en las siguientes situaciones, por ello también debemos dejar claro cual es el procedimiento a seguir.
+\begin{itemize}
+\item ¿ El commit previo es un fork ? No sabemos si es responsable, ya que no podemos identificarle. Un fork es cuando se realiza una copia exacta de un repositorio, el cual podremos usar a partir de ese momento como un repositorio git normal. En otras palabras, se puede entender como una bifurcación de un repositorio, en el cual hasta el fork tienen el mismo estado pero a partir de ahí cada repositorio evoluciona de manera independiente. La razón por la cual no podemos identificar al responsable, se debe a que cuando se realiza un fork, todos los archivos del repositorio son añadidos al nuevo repositorio con un identificador de commit diferente al que tenían. Ese es el motivo por el cual no podemos identificar al responsable a menos que nos cambiemos al repositorio 'padre' y sigamos investigando en él.
+\item ¿ El commit solo ha modificado comentarios, nombre de las versiones ó a añadido líneas en blanco? No es responsable. Estos son algunos de los ejemplos mas claros sobre cuando un commit no es responsable del error, ya que modificar comentarios o añadir líneas en blanco no alteran el comportamiento del programa.
+\end{itemize}
+\label{sec:estudio}
+
+Al igual que en la primera fase, los dos desarrolladores han ido trabajando en paralelo análizando los tickets de error. Una vez finalizado su trabajo, el procedimiento seguido fué el mismo que en la primera fase, ambos desarrolladores compararon sus resultados, obteniendo una clasificación final en la cual aquellos tickets que no eran similares en ambas clasificaciones fueron debatidos y se llegó a un acuerdo.
+
+En esta fase el número de discrepancias antes del anlisis fue mas elevado, obteniendo 19 diferencias entre ambas clasificaciones, de las cuales, 11 de ellas fueron de similitud moderada y 8 de similitud critica. Teniendo en cuenta que ene esta fase la similitud moderada se da cuando opinan lo mismo acerca de la responsabilidad de los commits implicados, pero en una de las clasificaciones aparece algún commit mas. Mientras que la similitud critica se da cuando ambos desarrolladores opinan diferente en cuanto a la responsabilidad de los commits ó cuando el identificador de dichos commits son diferentes.
+
+Tras debatir ambas discrepancias y volver a revisar el código, en aquellos casos de similitud critica, se llegó a un acuerdo unánime por ambas partes, en el cual se obtuvo una clasificación final. Después de obtener dicha clasificación, podemos generar diferentes gráficas jugando con las variables que hemos analizado. Estas gráficas se muestran y se explican en la sección ~\ref{sec:resultadosF2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DESCRIPCIîN DE LA HERRAMIENTA %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Descripción de la Herramienta}
+En este capítulo va dirigido a la descripción de la herramienta que hemos desarrollado usando las tecnologías actuales, describiendo en una primera sección la arquitectura que posee, así como numerando las necesidades requeridas que debe cumplir la aplicación. Para acabar, ofrecenciendo una descripción detallada acerca de las funcionalidades implementadas en la herramienta. 
+
+\section{Arquitectura} 
+\label{sec:arquitectura}
+
+La herramienta implementada consta de dos partes claramente diferencias, el Back-End y el Front-End, ambas partes se comunican a través un API RESTful que nosotros mismos hemos creado atendiendo a nuestras necesidades, el cual ha sido descrito en la sección ~\ref{sec:apiherrramienta}, de esta forma obtenemos los recursos que necesitamos en cada momento. 
+
+Nos referimos a Front-End como las estructuras 'HTML', los estilos 'CSS' e interacciones 'JavaScript' que se encargan de transformar todo 'el diseño' web mediante código que no necesita ser procesado para ejecutarse. Actualmente herramientas como AJAX y Websockets nos permiten comunicarnos con la parte del Back-End. 
+
+Se conoce como Back-End al encargado implementar la capa de datos, trabajando con lenguajes y gestores base de datos como PHP, ASP, JAVA y MySQL, Postgres, SQL Server, MongoDB, respectivamente.  Para ello usa frameworks como Django y Ruby on Rails o interpretes como NodeJS, que permiten consultas a base de datos remotos, en los que se realizan envío de formularios, inicios de sesión, registros, etc. y se transmite la información a través del código realizado por el Front-End al lado del cliente.  
+
+En nuestra aplicación, el Back-End usa el interprete de NodeJs, el cual actuará como servidor encargandose de realizar peticiones a otras APIs, concretamente a la API de Launchpad \url{https://api.launchpad.net/1.0.html} y la API de Gerrit \url{https://gerrit-review.googlesource.com/Documentation/rest-api.html}. También se encargará de atender las peticiones de su propia API, que llegan desde el cliente, enviando toda la información requerida al Front-End en formato JSON.
+
+El Front-End de nuestra aplicación tiene varias tecnologías coexistiendo, ya que el estilo y la estructura de la página viene definido por Bootstrap, HTML5 y CSS3, mientras que la funcionalidad de la herramienta es trabajo de JavaScript y sus bibliotecas JQuery y Githug.js . Los Request son enviados a través de eventos programados en los botones de los que el usuario dispone, de esta forma, la interfaz de usuario es mas amigable e intuitiva, o por lo menos esa es nuestra idea.
+
+La herramienta no dispone de base de datos, pero en su defecto, dispone de un repositorio Git asociado a la aplicación y que se encuentra albergado en GitHub. Gracias al uso de algunas librerías de Java Script y tras crear y configurar permisos para que nuestra aplicación use Github, disponemos de una 'base de datos' online, ofreciéndonos una gran ventaja y es que disponemos de una alta disponibilidad para ver los datos siempre que lo necesitemos.
 
 En la figura~\ref{fig:arquitectura} se muestra la estructura de nuestra aplicación web (APP WEB)
 
@@ -663,111 +854,29 @@ En la figura~\ref{fig:arquitectura} se muestra la estructura de nuestra aplicaci
   \label{fig:arquitectura}
 \end{figure}
 
+\section{Necesidades requeridas} 
+\label{sec:anecesidades}
 
-\section{Estudio} 
-
-En esta seción explicaremos en que se basa nuestro estudio, la descripción será más detallada que en las secciones previas, pero sin llegar a profundizar demasiado, ya que éste no es el objetivo del proyecto. Si queremos saber más acerca del estudio, en los anexos, podemos encontrar un paper en el que se explica el estudio empírico que estamos llevando a cabo. Empezaremos introduciendo algunos de los conceptos y familiarizándonos con palabras que serán nombradas continuamente a lo largo de este proyecto.
-
-El objetivo principal es estudiar el número de casos en los cuales el error ha sido causado por el commit inmediatamente anterior. Entendiendo por commit un cambio realizado en el código fuente que lleva asociado un identificador único, [hablar sobre repositorios y la evolución de los commits].  A causa de la falta de evidencia empírica que encontramos en la literatura actual acerca del tema que queremos tratar, hemos realizado un estudio observacional que engloba el análisis de 100 tickets extraídos del repositorio de Cinder. Un ticket es el nombre que se da a la evolución escrita sobre un error encontrado en el código, el cual se reporta con un identificador único en un repositorio destinado para ello, en nuestro caso, Launchpad. [hablar sobre Launchpad, alguna captura de pantalla estaría guay].
-
-El estudio consta de dos fases, en la primera de ellas clasificamos los tickets en tres categorías: 'Error', 'No error', ó 'No lo sabemos'. La segunda fase, se centra en el estudio de los tickets que han sido categorizados como 'Error'. Clasificando nuevamente los tickets acorde con de la responsabilidad del commit o commits anteriores en tres nuevos grupos: 'Es responsable', 'No es responsable' y 'No lo podemos saber'. 
-
-
-%Cinder forma parte de un gran proyecto, en el mundo del cloud computing software, conocido con el nombre de OpenStack. OpenStack es una combinación de herramientas de software diseñada para construir y manejar 'cloud computing platforms' para 'clouds' tanto públicas como privadas.
-
-
-\subsection{Primera Fase}
-\label{subsec:fase1}
-
-En OpenStack los tickets pueden encontrarse en el Launchpad de ese proyecto, en nuestro caso, hemos extraído los 100 tickets de  \url{https://bugs.launchpad.net/cinder}. Los tickets poseen diferentes estados dependiendo de su evolución, desde que se reporta un error hasta que alguien arregla el error, el ticket pasa por diferentes estados: [Listar los diferentes estados].
- 
-Nosotros solamente estamos interesados en aquellos tickets cuyo estado sea  'Fix Committed' or 'Fix Released', ya que solamente en esos casos los cambios realizados en el código son visibles. Como ya hemos comentado anteriormente, cada ticket posee un identificador único, será con ese identificador con el cual reconoceremos a ese ticket en el Launchpad. El ticket contiene toda la información relativa al error que se ha reportado [mostrar captura de imagen], pero nosotros solamente usamos cierta información para obtener la clasificación de tickets en esta primera etapa. [Mencionar la información que usamos y el porque la usamos].
-
-Esta primera fase tiene gran relevancia puesto que es aquí donde separamos los tickets que son error de aquellos que no lo son. Esto es muy importante, ya que nuestro estudio empírico se centra en analizar si el commit inmediatamente anterior ha sido el responsable del error. Por tanto, si lo que analizamos no es un ticket en el que se notifica un error, el estudio sería erróneo. Por este motivo, nos interesa detallar que información es la extraída y que nos aporta esa información para obtener la primera clasificación.
-
-Normalmente, un buen ticket debería tener un titulo claro, una descripción detallada sobre lo que actualmente esta fallando, y una descripción, que iría ligada al commit, en la que se detallase cual ha sido la solución que ha areglado el error. [Captura de pantalla donde aparezcan estos tres campos]. Cuando nos encontramos con tickets que cumplan lo anteriormente mencionado, podemos estar seguros de que el ticket realmente notifica un verdadero error. Suele ser común encontrar que la descripción del ticket y la descripción del commit sea la misma, en esos casos, tendremos que revisar detalladamente el código en el estado antes y después de que el posible error fuera solucionado, para ello será necesario obtener el identificador del commit realiza el parche y el su commit padre. [Hablar un poco sobre como localizar versiones en git moviendose a través de commits].
-
-A continuación detallaremos como obtener la información, como ya hemos dicho, cada ticket posee un identificador único en Launchpad, nos referiremos a él como 'n\_ticket'. Con este id, podemos obtener toda la información acerca del error en \url{https://bugs.launchpad.net/cinder/+bug/n_ticket}. El titulo y el identificador del commit a veces puede encontrarse en la misma página, en un comentario cuyo titulo sea 'Fix merged to cinder (master)'. [Poner captura de pantalla]
-
-OpenStack nos proporciona una interfaz web donde encontramos Gerrit Code Review system, ahí podemos encontrar los cambios propuestos y revisarlos en \url{https://review.openstack.org/ }. Concretamente, podemos encontrar la revisión del código para cada 'n\_ticket' que queremos analizar en at \url{https://review.openstack.org/#/c/n_review}, donde 'n\_review' es el identificador de revision único para cada 'n\_ticket'. En la revision del código se muestra toda la información acerca del parche que arregló el error. 
-
-[Debemos hablar o explicar mas detalladamente el porque necesitamos usar unos criterios o en que casos podemos tener dudas, podria pensar incluso en aïadir un ejemplo con codigo]
-Necesitamos definir ciertos criterios, los cuales seguiremos en caso de duda. Las siguientes preguntas responden al procedimiento que debemos seguir cuando nos encontremos en esas situaciones.
-
-[Comentar los tipos de ficheros,]  
-\begin{itemize}
-\item ¿ El commit sólamente ha modificado ficheros de tests ? No es un error. Uno de nuestros criterios marca que no debemos analizar los ficheros de test, ya que comprendemos que cada modificatción que se realiza en el código debe llevar asociada su correspondiente comprobación, es decir, código que compruebe que funciona, de esta manera se le da consistencia al programa. Para ello, Cinder tiene unos ficheros bajo el nombre de test, donde realiza estas comprobaciones. Por tanto, entendemos que si algo falla solamente en los ficheros de test, se debe a que el error se encuentra en el código del fichero de test y no en los ficheros del programa. 
-\item ¿ Si el ticket notifica una nueva funcionalidad ? No es un error. No consideraremos las nuevas funcionalidades como errores, bajo nuestro criterio no es un fallo del programa si no una mejora. Algunas personas podrían pensar que la falta de algunas funcionalidades en el programa implica un error, por eso lo notifican en un ticket, pero esa no es es nuestra creencia y por tanto no lo consideraremos como un error. 
-Ademas de las nuevas funcionalidad, todos aquellos tickets que notifiquen optimización del código ó eliminación de código muerto estarían bajo los mismos criterios que las nuevas funcionalidades. 
-\item ¿ El título del ticket describe un comportamiento inesperado ? Es un error. Ocasionalmente, el ticket describe un comportamiento inesperado en funcionalidades que no afectan al comportamiento general del programa. Por este motivo podríamos pensar inicialmente que si no afecta al funcionamiento principal del programa no es un error, pero hemos decidido que lo consideraremos como un error, puesto que se se ha llegado a implementar algo y después no funciona como se espera, es un error, a pesar de que no afecte al funcionamineto general del programa. 
-\item ¿ El título del ticket describe que se requieren actualizaciones ? Es un error. La naturaleza del código es evolucionar, por tanto lo mas normal es que el código necesite ser actualizado, evolucionar en versiones, etc. En esos casos, consideraremos que el ticket está notificando un error ya que si no se actualiza, el programa no funcionará adecuadamente y causará errores.
-\end{itemize}
-
-En ocasiones no seremos capaces de decidir si un ticket es un error o no lo es, por ese motivo tenemos el tercer grupo llamado 'No lo sabemos', en este grupo se encontrarán todos aquellos tickets que son difíciles de clasificar, debido a que no tenemos toda la información necesaria ó que no somos expertos conocedores del código.
-
-\subsection{Segunda Fase}
-\label{subsec:fase2}
-En la segunda fase, solo nos centraremos en los ticket que hayan sido clasificados dentro del frappe 'Es un Error', ya que de esta forma nos estamos asegurando que todo el análisis posterior es válido. Además, asumimos el error que estamos cometiendo al no tener en cuenta los ticket del grupo ' No lo sabemos' , ya que puede suceder que hayamos clasificado ticket que notificaban errores de verdad en el grupo 'No lo sabemos'. Aún así, decidimos obviar a ese grupo ya que el porcentaje de tickets hallados en él es bajo, entorno al 16\%, por tanto no sería de suma importancia tenerlo en cuenta en los resultados finales y asumimos estar cometiendo un error. 
-
-A partir de este momento, la parte más difícil comienza. Nos centraremos en analizar los commits involucrados e identificar quien ha sido el responsable del error. Para ello tenemos que identificar cuales son los ficheros involucrados y dentro de ellos, cuales son las líneas que han sido modificadas, eliminadas ó añadidas.
-
-Cuando hablamos de líneas añadidas, entendemos que son lineas que antes de solucionar el error no se encontraban en el/los fichero/s pero para arreglar el error, han tenido que ser añadidas. Lo mismo sucede con las lineas eliminadas, para solucionar el error han tenido que eliminar lineas del código. Hasta este momento no hay ninguna duda para poder identificar estas líneas, la cosa se complica al identificar líneas que han sido modificadas. En el código pueden realizarse multitud de cambios que impliquen una modificación de código, por eso debemos dejar claro que es lo que nosotros entendemos por código modificado. Para nosotros, el código modificado es aquellas líneas en las que cambia algo, el nombre de una variable, las condiciones del bucle, los argumentos de la función, \ldots etc. Pero no entendemos que el código haya sido modificado en aquellos casos en los que se borra código de un lado para añadirlo en otro sitio, ó incluso cuando se elimina código para volverlo a escribir idénticamente.
-
-[Hablar sobre los tres grupos de clasificación que se han llevado a cabo, si es responsable, no es responsable, no lo sabemos]
-Al igual que en la primera fase, en esta también hemos seguido ciertos criterios para identificar si el commit previo es el responsable de introducir el error o no.
-A continuación aparecen algunos casos en los que podríamos encontrarnos antes de analizar el commit, por tanto el criterio a seguir es el siguiente.
-\begin{itemize}
-\item ¿ El ticket notificaba una actualización ? No hay responsable. Entendemos que la naturaleza del código es evolucionar, por tanto si se requiere una actualización nadie puede ser el responsable.
-\item ¿ El commit que arregla en error no se ha llevado a cabo en el repositorio de Cinder ? No podemos identificar al responsable, ya que el parche se ha ejecutado en otro repositorio que no es el de Cinder, por tanto no tenemos acceso al identificador del commit. En ocasiones esto sucede debido a que el error afecta a varios componentes de OpenStack, por tanto el error puede ser arreglado en cualquiera de los repositorios
-\end{itemize}
-
-Si el ticket no se encuentra en ninguna de las situaciones anteriores, tendremos que analizar los commits implicados y el código en detalle. Para analizar el tipo de código usado en el parche y las carpetas que están involucradas, hacemos uso de GIT, sistema de control de versiones distribuido que nos proporciona commandos útiles para el análisis del código.
-
-Para empezar nuestro análisis, lo primero que hemos hecho es clonarnos el repositorio Cinder localmente usando el comando 'git clone'. Después, hemos elegido uno de los tickets y hemos extraído el identificador del commit que arregló el error, y el identificador del commit padre, es decir, el identificador del commit antes de que el error fuese arreglado. También hemos extraído el nombre de los ficheros que han sido involucrados.  Usamos el comando 'git checkout id\_commit' para cambiar entre los diferentes estados de los ficheros, empezamos en el estado actual, cuando el error ya ha sido arreglado, para obtener el/los identificador/es del commit/s previos al cambio en cada fichero. Para ello, usamos el comando 'git blame file', así obtenemos el commit y auto que ha modificado cada una de las líneas del fichero por última vez, y guardamos la salida obtenida en un fichero de texto. Luego, nos cambiamos al estado del fichero antes de que el error fuese arreglado y realizamos el mismo procedimiento para posteriormente poder comparar los ficheros que hemos guardado.
-
-Una vez que hemos guardado los ficheros tenemos que compararlos para saber en que líneas se encuentran las diferencias entre ambos, y así saber que commits previos son los presuntos responsables del error. Usamos el comando 'diff -B fichero1 fichero2' para mostrar linea\-a\-linea las diferencias entre los dos ficheros, la optición \'-B' significa que las líneas en blanco se ignorarán. Diff es un algoritmo extensamente explicado en   [Ukkonen, 1985, Miller and Myers, 1985, Myers, 1986]  el cual nos provides de multitude de source code management systems. Esta herramienta examina ambos ficheros y nos devuelve los cambios que necesita realizar el primer fichero para coincidir con el segundo fichero, es decir, nos está devolviendo las diferencias entre ellos, mostrándo el número de lineas.
-
-En este momento tenemos una lista de commits con los posibles responsables del error. El siguiente paso es analizar cada uno de los commits y clasificarlos dependiendo de su responsabilidad en uno de estos tres grupos:
-\begin{enumerate}
-    \item Es el responsable
-     \item No es el responsable 
-    \item No sabemos si es responsable
-\end{enumerate}
-
-Como es normal, un parche puede tocar varios ficheros y en cada fichero padría estar implicado un commit previo diferente. Por tanto, podemos tener situaciones en las que el responsable del error sea mas de un commit previo.
-
-Una vez que estamos analizando los commits implicados, podríamos encontrarnos en las siguientes situaciones, por ello también dejamos claro cual es el procedimiento a seguir.
-\begin{itemize}
-\item ¿ El commit previo es un commit fork ? No podemos identificar al responsable. [Hablar sobre que es un commit fork] En este caso, no podemos identificar al responsable a menos que nos traslademos de repositorio y sigamos investigando.
-\item ¿ El commit solo ha modificado comentarios, nombre de las versiones ó a añadido líneas en blanco? No es responsable. Estos son algunos de los ejemplos mas claros sobre cuando un commit no es responsable del error, ya que modificar comentarios o añadir líneas en blanco no alteran el comportamiento del programa.
-\end{itemize}
-
-\label{sec:estudio}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% DESCRIPCIîN DE LA HERRAMIENTA %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\chapter{Descripción de la Herramienta}
-
-La herramienta nos sirve de gran ayuda para nuestro estudio, nos ahorra tiempo de análisis y nos proporciona la integración de varios procesos en una misma aplicación. La herramienta debe cumplir una serie de requisitos indispensables para que sea de gran utilidad y a su vez para que la experiencia del desarrollador sea agradable. 
+La herramienta nos sirve de gran ayuda para nuestro estudio, nos ahorra tiempo de análisis y nos proporciona la integración de varios procesos en una misma aplicación. Pero debe cumplir una serie de requisitos indispensables para que sea de gran utilidad y a su vez para que la experiencia del desarrollador sea agradable. 
 
 A continuación se enumeraran los requisitos que debe cumplir nuestra herramienta:
 \begin{enumerate}
-    \item Extraer información de un ticket concreto.
-    \item Obtener el identificador de los tickets de manera aleatoria.
-    \item Recursos que permitan al desarrollador expresar su opiniïn acerca del análisis.
-    \item Guardar la información obtenida y analizada sobre el ticket.
-    \item Visualizar la información almacenada sobre un ticket.
-    \item Modificar la información almacenada sobre un ticket.
-    \item Visualizar los resultados.
+    \item Extraer información de un ticket concreto: La información a la cual nos referimos no es otra que aquella que hemos obtenido manualmente en el estudio anterior y que nos ayuda a clasificar los tickets.
+    \item Obtener el identificador de los tickets de manera aleatoria: De este modo el estudio sigue teniendo un carácter aleatorio sin poseer ninguna varianza previa.
+    \item Recursos que permitan al desarrollador expresar su opinión durante el análisis: Para que los desarrolladores puedan tener acceso a las opiniones de otros desarrolladores en relación al análisis de un ticket. 
+    \item Guardar la información obtenida y analizada sobre el ticket: Es imprescindible poder guardar los datos de los tickets que acaban de ser analizados.
+    \item Visualizar la información almacenada sobre un ticket: La aplicación debe mostrar los datos sobre un ticket que previamente ha sido guardado.
+    \item Modificar la información almacenada sobre un ticket: La aplicación debe ofrecer la opción de modificar el análisis de un ticket ya que el desarrollador podría haber cometido un error. 
+    \item Visualizar los resultados de clasificación: Esta funcionalidad es requerida para proporcionar al desarrollador una visión general de la primera clasificación de los tickets. 
 \end{enumerate}
 
-Estas necesidades se encuentran solventadas en las tres pestañas, 'Analyse', 'Statistics' y 'Modify', de las que dispone la aplicación. Vamos a describir la herramienta desde el lado del cliente, es decir, describiendo cada una de las funcionalidades que nos ofrecen los distintos botones de los que disponemos en interfaz de usuario, iremos poniendo imágenes que muestren visualmente dichas funcionalidades.
+Cabe destacar que la herramienta solo proporciona automatización para la primera fase ó fase de filtrado, debido a que la segunda fase todavía recomendamos hacerla manualmente, ya que hay que tener muchos factores en cuenta al analizar código y probablemente, cuantos mas códigos analicemos mas situaciones diferentes podremos encontrarnos y deberíamos tenerlas todas ellas en consideración.
 
-La imágen ~\ref{figura:Index} muestra el aspecto inicial de la aplicación Web.
+La aplicación no es mas que una web dinámica en la que disponemos de tres pestañas  \textit{'Analyse', 'Statistics'} y  \textit{'Modify'}. Son en estas pestañas en las cuales se encuentran solventadas las necesidades enumeradas anteriormente. 
+
+En las siguientes secciones, vamos a describir la aplicación web desde cada una de las pestañas disponibles en ella. Es decir, describiendo cada una de las funcionalidades que nos ofrecen los distintos botones que podemos encontrar en la interfaz de usuario. Además de la descripción, se proporcionarán  capturas de pantalla realizadas a la aplicación web en las cuales se que muestran visualmente las funcionalidades que se describen.
+
+La primera captura de pantalla que nos encontramos, imáagen ~\ref{figura:Index}, muestra el aspecto inicial de nuestra aplicación Web. En ella podemos observar en la parte superior a la derecha, las tres pestañas que hemos comentado anteriormente. Por defecto la pestaña 'Analise' se muestra al abrir la aplicación.
 \begin{figure}
     \centering
     \includegraphics[scale=0.45]{img/Index}
@@ -775,13 +884,13 @@ La imágen ~\ref{figura:Index} muestra el aspecto inicial de la aplicación Web.
     \label{figura:Index}
 \end{figure} 
 
-\section{ANALYSE}
+\section{Analyse}
 \label{subsec:analyse}
-En esta sección comentaremos cada uno de los botones y tablas que aparecen en la web al pulsar sobre la pestaña 'ANALYSE'.
+En esta sección detallaremos cada una de las funcionalidades que nos ofrecen los botones así como el contenido que aparece en los formularios disponibles en la pestaña  \textit{'ANALYSE'} de nuestra applicación web.
 
-La funcionalidad priomordial de la aplicaciïn web que hemos desarrollado se centra en esta pestaña. Nosotros necesitamos analizar una gran cantidad de tickets para poder proporcionar datos concisos y fiables. Para ello, los tickets necesariamente tienen que tener carácter aleatorio, para que nuestra eleción no influya en los resultados finales. Para poder conseguir tickets aleatorios, disponemos del botón 'START'. 
+La funcionalidad primordial de la herramienta web desarrollada, se aloja en esta pestaña. Nos vemos en la necesidad de analizar una gran cantidad de tickets para poder proporcionar datos fiables. Para ello, los tickets necesariamente tienen que tener carácter aleatorio, de esta forma eliminamos el sesgo que pueda tener los resultados de la investigación debido a nuestra eleción. 
 
-Al clicar sobre dicho botón, aparecen tres columnas 'scrollables' con el identificador que los tickets poseen el el Launchpad. Además, se realiza una consulta al repositorio GIT que tenemos asociado para mostrarnos que tickets han sido analizados previamente, coloreando el identificador del ticket en verde y añadiendo el nombre del desarrollador que lo analizó.
+Para poder cumplir este objetivo, la aplicación dispone del botón  \textit{'START'}.  Al clicar sobre dicho botón, la herramienta consulta la página de la Launchpad y extrae de ella los primeros 75 tickets, de los cuales se mostrará el identificador de cada uno al usuario en tres columnas 'scrollables'. Además, internamente se estaá realizando una consulta al repositorio GIT que tenemos asociado a la investigación, y en el cual se almacenan los tickets que han sido analizados, para mostrarnos que tickets han sido analizados previamente, coloreando el identificador del ticket en verde y añadiendo el nombre del desarrollador que lo analizó. 
 
 \begin{figure}
     \centering
@@ -790,16 +899,17 @@ Al clicar sobre dicho botón, aparecen tres columnas 'scrollables' con el identif
     \label{figura:RandomTickets}
 \end{figure}
 
-De esta forma el desarrollador sabe cuales son los tickets que han sido analizados y decidir si quiere visualizarlos o seguir analizando otros tickets. 
+En este punto, el desarrollador tiene tres opciones. La primera, analizar un ticket que no ha sido analizado previamente, es deicr, aquellos que no estaán coloreados en verde. La segunda, visualizar los datos que han sido guardados sobre uno de los tickets coloreado en verde. La tercera opción, volver a realizar el análisis de un ticket que ya ha sido analizado previamente.
 
-Si el desarrollador decide seguir analizando otros tickets, debe pinchar sobre el identificador del ticket que desee analizar, éste pasará a colorearse en un tono ámbar, y se mostrará la información relevante acerca de ese ticket en la tabla 'Ticket Info', informaciïn extraída de Launchpad. Para obtener la información relativa a la revisión del código, el desarrollador debe pulsar el botón 'More Info', y la tabla 'Review Info' se rellenará automáticamente con la información extraída de 'Gerrit'. 
+Si el desarrollador decide seguir analizando otros tickets, debe pinchar sobre el identificador del ticket que desee analizar, éste pasará a colorearse en un tono ámbar, y se mostrará la información relevante acerca de ese ticket en la tabla  \textit{'Ticket Info'}, informaciïn extraída de Launchpad acerca de ese ticket. Para obtener la información relativa a la revisión del código, el desarrollador debe pulsar el botón  \textit{'More Info'}, y la tabla  \textit{'Review Info'}se rellenará automáticamente con la información extraída de Gerrit sobre dicho ticket. 
 
-Es en este momento es cuando el desarrollador puede categorizar el ticket en uno de los grupos, 'Es un Error', 'No es un Error' ó 'No estamos seguros', añadir las palabras claves y expresar su opinión, para ello, la herramienta dispone de unas 'cajas' y un selector de categoría. 
-En las tablas aparecen enlaces a las páginas tanto de Launchpad como de Gerrit, así como al código que ha sido modificado entre la versión actual y la versión anterior de cada uno de los ficheros implicados. Gracias a esto, el desarrollador tiene a su alcance todo lo que necesita para poder decidir como categoriza el ticket que está analizando.
+Es en este momento es cuando el desarrollador puede categorizar el ticket en uno de los tres grupos que disponemos, 'Es un error', 'No es un error' y 'No estamos seguros'. Además puede añadir las palabras claves que ha encontrado en el titulo, en la descripción del ticket y en la descripción del commit, así como expresar su opinión. Para ello, la herramienta dispone de unas 'cajas' de texto donde el usuario puede escribir y un selector de categoría. 
 
-Las palabras clave o 'keywords' serán útiles en un futuro. Analizaremos su presencia en los tickets, usando algoritmos de machine learning, con el objetivo de conseguir clasificar automáticamente los tickets basándose en las palabras que aparecen en el titulo, la descripción del error y la descripción del parche. 
+En los formularios que han sido rellenados autoáticamente, aparecen enlaces a páginas de interés como son la página de de Launchpad ó la página de Gerrit. Los enlaces aparecen para proporcionar al usuario mayor nivel de información, por si la mostrada le pareciese escasa ó incluso porque necesita visualizar el código que ha sido modificado entre la versión actual y la versión anterior de cada uno de los ficheros implicados para poder llegar a una conclusión. Gracias a esto, el desarrollador tiene a su alcance todo lo que necesita para poder decidir como categoriza el ticket que está analizando.
 
-La figura ~\ref{figura:ProcedimientoTicket} muestra como sería el aspecto de las tablas tras el auto-relleno y la opinión del desarrollador.
+Las palabras clave o  \textit{keywords} debemos elegirlas cuidadosamente, ya que nos serán útiles en un futuro. En esta fase, de momento nos sirve como una recolección de muestras, las cuales analizaremos en fases más avanzadas. Determinando como influye su presencia en los tickets, para ellos haremos uso de algoritmos de machine learning, con el objetivo de obtener una clasificación automática de los tickets basándonos en la semántica descrita en el titulo, en la descripción del ticket y en la descripción del cambio. 
+
+La figura ~\ref{figura:ProcedimientoTicket} muestra el aspecto final que debería tener la herramienta tras el auto-relleno de los formularios y la opinión del desarrollador.
 
 \begin{figure}
     \centering
@@ -808,13 +918,13 @@ La figura ~\ref{figura:ProcedimientoTicket} muestra como sería el aspecto de las
     \label{figura:ProcedimientoTicket}
 \end{figure}
 
-El último paso para acabar con el análisis del ticket, sería proceder a guardar la información. Para ello se encuentra habilitado el botón 'SAVE', que transforma todos datos a un formato JSON y lo almacena en el repositorio albergado en GIThub. Añadiendo un archivo de texto, cuyo contenido son los datos en formato JSON y cuyo nombre es 'NombreDelRevisor\_NumDelTicket'. De esta forma, sabemos quién es el revisor y el ticket que se ha revisado.
+El último paso para acabar con el análisis del ticket, sería proceder a guardar la información. Para ello se encuentra habilitado el botón  \textit{'SAVE' }, que transforma los datos situados en los campos de información de la web a un formato JSON, y lo almacena en el repositorio destinado para nuestro análisis albergado en GIThub. Añadiendo un archivo de texto, cuyo contenido son los datos en formato JSON y cuyo nombre es  \textit{NumDelTicket\_NombreDelRevisor}. De esta forma, sabemos quién es ha sido el revisor y cual ha sido ticket que se ha revisado.
 
-En esta pestaña se añade la posibilidad de analizar un ticket del cual sabemos su identificador, para ello deberemos rellenar el campo etiquetado como 'Ticket ID' y pulsar el botón 'GET INFO'  ver figura ~\ref{figura:RandomTickets}.
+En esta pestaña se añade además, la posibilidad de analizar un ticket del cual sabemos su identificador, para ello deberemos rellenar el campo etiquetado como  \textit{Ticket ID} y pulsar el botón  \textit{'GET INFO'}, situados en la parte izquierda de la aplicación, ver figura ~\ref{figura:RandomTickets}.
 
-Internamente, lo que se estaá ejecutando tras pulsar sobre el identificador del ticket o en el botón 'GET INFO', es un evento programado. Este evento hace su primera petición request a nuestra API, obteniendo los campos agrupados en la tabla 'Ticket INFO'.  La segunda petición request a nuestra a API se realiza cuando pulsamos el botón 'MORE INFO', rellenando así los campos correspondientes a la información que obtenemos del code review (GERRIT).
+Internamente, lo que se estaá ejecutando tras pulsar sobre el identificador de un ticket obtenido aleatoriamente o sobre el botón  \textit{'GET INFO'}, es un evento Java Script programado. Este evento hace su primera petición request a nuestra API, obteniendo los campos agrupados en la tabla  \textit{'Ticket INFO'}.  La segunda petición request a nuestra a API se realiza cuando pulsamos el botón  \textit{'MORE INFO'}, rellenando así los campos correspondientes a la información que obtenemos del code review (GERRIT).
 
-La otra opción que tiene el desarrollador es pulsar sobre uno de los tickets coloreados en verde, ticket que ya ha sido analizado, para poder visualizar la información que fue guardada. Para ello, tras pulsar en el ticket, debemos pulsar el botón 'SEE DATA', y aparecerá en la parte derecha de la web una tabla con toda la información almacenada en el ticket. 
+Ahora, solo falta comentar la otra opción que tiene el desarrollador y de la cual hemos hablado al principio y es pulsar sobre uno de los tickets coloreados en verde. Tras pulsar en el identificador del ticket, podemos volver a realizar el proceso que acabamos de describir para obtener un segundo análisis del ticket, ó podemos visualizar la información guardada sobre ese ticket. Si optamos por lo segundo, lo único que debemos hacer es pulsar el botón  \textit{'SEE DATA'}, y se mostrará en la parte derecha de la web, una tabla con toda la información almacenada en el ticket, como podemos comprobar en la imágen ~\ref{figura:SeeData}.
 
 \begin{figure}
     \centering
@@ -823,17 +933,16 @@ La otra opción que tiene el desarrollador es pulsar sobre uno de los tickets col
     \label{figura:SeeData}
 \end{figure}
 
-
-\section{STATISTICS}
+\section{Statistics}
 \label{subsec:statistics}
 
-Al pulsar sobre esta pestaña, aparecen unos selectores que muestran el nombre de los revisores que han contribuido en el análisis de la primera fase. Al pulsar sobre cada uno de los selectores, se rellena una tabla de datos en la cual se muestran los resultados de la primera etapa de clasificación, es decir, las estadísticas de clasificación de los tickets para ese revisor en la primera fase. 
+Al pulsar sobre esta pestaña, aparecen unos selectores que muestran el nombre de cada uno de los revisores que ha contribuido en el análisis de los tickets en su primera fase. Al pulsar sobre los selectores, se rellena una tabla de datos con información relativa a los resultados de clasificación de la fase de filtrado. Podemos entenderlo como las estadísticas de clasificación de los tickets para un revisor en la primera fase. 
 
-En la tabla se puede visualizar el número de tickets que componen cada uno de los tres grupos de clasificación, 'Es un error, 'No es un error', ' Unknown', así como el porcentaje que se ha obtenido en cada grupo. 
+En la tabla se puede visualizar el número de tickets que componen cada uno de los tres grupos de clasificación, 'Es un error, 'No es un error' y ' Unknown', así como el porcentaje en '\%' que se ha obtenido en cada grupo. 
 
-Además, disponemos de la posibilidad de dibujar un gáfico de barras en el que se muestra visualmente el porcentaje de tickets para cada grupo. Como se muestra en la figura ~\ref{figura:Statistics}.
+Además, disponemos de la posibilidad de dibujar un gáfico de barras en el que se muestre visualmente el porcentaje de tickets para cada grupo. Como se puede observar en la imágen ~\ref{figura:Statistics}.
 
-Para conseguir esto, lo único que debe hacer el usuario es pulsar sobre el botón 'DRAW'. A la derecha del gáfico disponemos de un menú no desplegado que nos permite descargarnos la imagen del gáfico con diferentes extensiones.
+Para conseguir esto, lo único que debe hacer el usuario es pulsar sobre el botón  \textit{'DRAW'}. A la derecha del gáfico disponemos de un menú desplegable que nos permite descargar la imagen, mostrada en gáfico de barras, con diferentes extensiones.
 
 \begin{figure}
     \centering
@@ -843,15 +952,16 @@ Para conseguir esto, lo único que debe hacer el usuario es pulsar sobre el botón
 \end{figure}
 
 
-\section{MODIFY}
+\section{Modify}
 \label{subsec:modify}
-Tras pulsar sobre la pestaña 'MODIFY', se nos proporciona en la parte izquierda un listado con todos los tickets que han sido analizados y se encuentran guardados en el repositorio GIT asociado a la web, y en la parte derecha un formulario que se autocompletará tras clicar sobre un ticket. 
 
-Esta funcionalidad estaá diseñada con el fin de proporcionar al desarrollador un lugar en el que pueda modificar aquellos tickets que fueron guardados previamente. Ya sea porque cometió un fallo,  porque quiere añadir mas información o simplemente porque ha cambiado de opinión tras volverlo a revisar.
+Tras pulsar sobre la última pestaña  \textit{'MODIFY'}, se nos proporciona en la parte izquierda un listado con todos los tickets que han sido analizados y se encuentran guardados en el repositorio GIT asociado a la apliación,  en la parte derecha aparece un formulario vacío, el cual se autocompletará tras clicar sobre un ticket. 
 
-En el formulario todos los campos que se rellenan pueden ser modificados a excepción del nombre del desarrollador, ya que para los resultados necesitamos saber quien ha sido el desarrollador.
+Esta funcionalidad estaá diseñada con el fin de proporcionar al desarrollador un lugar en el que pueda modificar aquellos tickets que ya han sido analizados y guardados previamente. Ya sea porque cometió un fallo,  porque quiere añadir mas información o simplemente porque ha cambiado de opinión tras volverlo a revisar.
 
-El aspecto que posee la web tras haber pinchado en la pestaña 'MODIFY' aparece en la figura \ref{figura:Modify}
+En el formulario todos los campos que se rellenan pueden ser modificados a excepción del nombre del desarrollador, ya que para los resultados necesitamos saber quien ha sido el desarrollador y no nos parece apropiado que se pueda cambiar el nombre del desarrollador. Podría suceder que el propio desarrollador se equivocase al introducir su nombre, en ese caso, habría que eliminar el ticket desde el repositorio de Github.
+
+El aspecto que posee la web tras haber pinchado en la pestaña  \textit{'MODIFY'} aparece en la figura \ref{figura:Modify}
 
 \begin{figure}
     \centering
@@ -859,25 +969,185 @@ El aspecto que posee la web tras haber pinchado en la pestaña 'MODIFY' aparece e
     \caption{Visualización la Web tras pulsar la pestaña 'MODIFY'}
     \label{figura:Modify}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONTENIDO y GRçFICAS %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage
-\chapter{Gráficas}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RESULTADOS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
 \chapter{Resultados}
+Este capítulo se divide en dos secciones. La primera de ellas referente a los resultados obtenidos en la primera fase de nuestro experimento, mientras que la segunda sección muestra los resultados obtenidos en la segunda fase del experimento. En ambos casos, se muestran las gráficas y tablas resultantes tras analizar los datos obtenidos. 
+
+\section{Resultados primera fase}
+\label{sec:resultadosF1}
+Los resultados obtenidos en la primera fase del experimento, hacen referencia a la primera clasificación, en la cual debíamos clasificar los tickets en tres grupos, ' Es un error', 'No es un error' y ' No sabemos clasificarlo'. 
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l |c|}
+\hline
+\multicolumn{2}{|c|}{Classification First Stage} \\ \hline
+Groups & Tickets belonging to (\%) \\
+\hline \hline
+It is an error & 63 \\ \hline
+It is not an error & 21 \\ \hline
+Unknown & 16 \\ \hline
+\end{tabular}
+\caption{Clasificación de los tickets dentro de cada grupo }
+\label{tabla:firstStage}
+\end{table}
+
+La primera tabla obtenida, cuadro ~\ref{tabla:firstStage}, representa el porcentaje de tickets para cada una de las tres clasificaciones. En la cual, podemos ver que de los 100 tickets analizados mas de 50 \% son clasificados como tickets que notifican un verdadero error, mientras que un 21 \% de los tickets describían situaciones que no han sido consideradas como error debido a que eran actualizaciones requeridas, nuevas funcionalidades ó otros casos. En esta tabla se observa también como un 16 \% de los tickets no han podido ser clasificados con la etiqueta error ó no error, es un porcentaje relativamente pequeño como para que pueda influir en gran medida en los resultados de la segunda fase. A pesar de ello, en este momento se asumirá que estamos cometiendo un pequeñ error en los datos de la siguiente fase debido a este 16 \%.
+
+La segunda tabla obtenida, cuadro ~\ref{tabla:firstStageImportance}, muestra el porcentaje de los tickets agrupados en una categoría, dependiendo de la importancia que se les dió en la Launchpad a lo largo de su vida.  En la figura ~\ref{fig:degree} podemos ver dichos datos en un gráfico de barras.
+\begin{table}[htb]
+\centering
+\begin{tabular}[t]{|l |c |c |r|}
+\hline
+\multicolumn{4}{|c|}{Classification depend of the importance} \\ \hline
+Importance & It is an error & it is not an error & Unknown \\
+\hline\hline
+Critical & 4 & 1 & 1\\
+\hline
+High & 25 & 3 & 7\\
+\hline
+Medium & 16 & 3 & 4\\
+\hline
+Low & 8 & 6 & 3\\
+\hline
+Undecided & 10 & 8 & 1 \\ \hline
+\end{tabular}
+\caption{Clasificación de los tickets dependiendo la importancia de éstos en Launchpad  }
+\label{tabla:firstStageImportance}
+\end{table}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1.1\textwidth]{img/firstStage} 
+	\caption{Resultados de la primera fase} \label{fig:degree}
+\end{figure}
+
+La conclusión que podemos extraer de esta tabla, asumiendo que la comunidad de Launchpad usa con criterio las etiquetas de importancia en sus tickets, son las siguientes:
+\begin{enumerate}
+    \item Un ticket cuya etiqueta de importancia sea  \textit{Critical} tiene un 66,66 \% de posibilidades de ser un error.
+    \item Un ticket cuya etiqueta de importancia sea  \textit{High} tiene un 71,42 \% de posibilidades de ser un error.  \item Un ticket cuya etiqueta de importancia sea 'Medium' tiene un 69,56 \% de posibilidades de ser un error.  
+    \item Un ticket cuya etiqueta de importancia sea  \textit{Low} tiene un 47,05 \% de posibilidades de ser un error.
+    \item Un ticket cuya etiqueta de importancia sea  \textit{Undecided} tiene un 52,63 \% de posibilidades de ser un error.    
+   \end{enumerate}
+
+Por lo tanto, el factor de importancia de un ticket, podría ser considerado como ayuda para los desarrolladores a la hora de decidir si un ticket es error o no lo es. Además, este factor puede utilizarse conjuntamente con la presencia de ciertas palabras o keywords para proporcionar unos mejores resultados.
+  
+\section{Resultados segunda fase}
+\label{sec:resultadosF2}
+En esta sección hablaremos sobre los datos obtenidos en la segunda fase de clasificación, donde los resultados indican cual es la responsabilidad que ejercen los commits inmediatamente anteriores en la responsabilidad del error introducido en el código fuente.
+
+La primera tabla obtenida, cuadro ~\ref{tabla:secondStage}, muestra el porcentaje de commits previos en cada una de las tres categorías. En ella observamos como en el 33,08 \% de los commits previos que han sido analizados y que han formado parte de la insercción de un error en el código, no son responsables.
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l |c|}
+\hline
+\multicolumn{2}{|c|}{Classification Second Stage} \\ \hline
+Responsibility & Number of commits (\%) \\
+\hline \hline
+It is responsible & 49,62 \\ \hline
+It is not responsible & 33,08 \\ \hline
+Unknown & 17,29 \\ \hline
+\end{tabular}
+\caption{Clasificación de la responsabilidad del commit anterior }
+\label{tabla:secondStage}
+\end{table}
+
+Acabamos de demostrar con datos obtenidos en nuestro experimento empírico, que la actual premisa establecida en la literatura acerca de que el responsable de añadir un error en el código es el commit previo solo se cumple en un 49,62 \% de los casos. Este dato no puede ser considerado como muy fiable puesto que hemos analizado una población pequeña de tickets, concretamente 100, de los cuales solamente 63 han pasado la fase de filtrado. A pesar de no poder asegurar que estos porcentajes se cumplan al analizar una población mayor de tickets, si podemos asegurar que hay una leve tendencia que nos indica a pensar que no todos los commits previos son responsables.
+
+Es mas, si dividimos aquellos tickets en los que solo ha habido un commit previo implicado, de aquellos en los que ha habido más de un commit implicado, los resultados son, cuanto menos, curiosos. A continuación se muestran los porcentajes de los commits anteriores en cada una de las tres categoías, tanto para el caso de que solo tengamos un commit antecesor, cuadro ~\ref{tabla:secondStageOne}, como para el caso de los que tienen mas de un commit, cuadro ~\ref{tabla:secondStageMore}.
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l |c|}
+\hline
+\multicolumn{2}{|c|}{Responsibility when only it is a commit} \\ \hline
+Responsibility & Number of tickets (\%) \\
+\hline \hline
+It is responsible & 75,86, \\ \hline
+It is not responsible & 6,90 \\ \hline
+Unknown & 12,24 \\ \hline
+\end{tabular}
+\caption{Clasificación de la responsabilidad del commit anterior}
+\label{tabla:secondStageOne}
+\end{table}
+
+De los 63 tickets que pasaron a la segunda fase, 29 de ellos solamente tenían un commit previo involucrado, mientras que 25 de los tickets tenían más de un commit. A los 9 tickets restantes no se encontró ningón commit previo puesto que los errores se habían solucionado en el repositorio de otro de los componentes de OpenStack distinto a Cinder.
+
+Ahora bien, en la tabla ~\ref{tabla:secondStageOne} situada encima de este párrafo y perteneciente a los tickets con solo un commit, podemos observar como en el 75,86 \% de los tickets, el commit previo fue el responsable de introducir el error. Mientras que solamente el 6,90 \% de commits no tuvieron responsables del error. 
+En este caso podemos pensar que nuestra hipótesis no es significativa y se podría seguir con la premisa actual de que el commit previo es el responsable del error, en cierto caso algo lógico puesto que solamente un commit previo se ve implicado.  
+
+Lo interesante aparece cuando observamos la tabla, cuadro \ref{tabla:secondStageMore} con los resultados de los tickets en los cuales hay implicados más de un commit previo. En donde podemos comprobar como nuestra hipótesis vuelve a recobrar fuerza, ya que el porcentaje de commits previos responsables y el porcentaje de commits previos no responsables se puede considerar idénticos, puesto que en un 46 \% de los casos el commit previo es responsable mientras que en un 44 \% de los casos el commit previo no es responsable.
+ 
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l |c|}
+\hline
+\multicolumn{2}{|c|}{Responsibility when there are more than one commit} \\ \hline
+Responsibility & Number of tickets (\%) \\
+\hline \hline
+It is responsible & 46,32 \\ \hline
+It is not responsible & 44,21 \\ \hline
+Unknown & 9,47 \\ \hline
+\end{tabular}
+\caption{Clasificación de la responsabilidad del commit anterior}
+\label{tabla:secondStageMore}
+\end{table}
+
+En las gráficas inferiores se muestra unos gráficos de barras obtenidos con los datos de las tablas ~\ref{tabla:secondStageOne} y ~\ref{tabla:secondStageMore} .
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1.1\textwidth]{img/secondStage} 
+	\caption{Resultados de la segunda fase} \label{fig:degree3}
+\end{figure}
+
+Con todos los datos analizados, podemos realizar multitud de tablas que nos ayudan de una forma u otra a obtener diversas tablas como la mostrada en el cuadro ~\ref{tabla:firtsStageMoreOne}, en donde podemos visualizar el grado de responsabilidad que ejercen todos los commits previos en un ticket. Dicha tabla separa los tickets en los cuales hay dos, tres, cuatro y más de cinco commits implicados, obteniendo los siguientes resultados:
+\begin{enumerate}
+    \item Un ticket en el cual se vean implicados dos commits, en un 57  \% de los casos la responsabilidad se reparte, mientras que en un 43 \% de los casos los dos commits son responsables del error.
+    \item Un ticket en el cual se vean implicados tres commits, en el 100  \% de los casos la responsabilidad del error supera el 50 \% , por tanto dos de los tres tickets son responsables.
+    \item Un ticket en el cual se vean implicados cuatro commits, en un 33  \% de los casos la responsabilidad es menor al 50 \%, mientras que en un 66 \% de los casos la responsabilidad supera el 50 \%.
+    \item Un ticket en el cual se vean implicados más de cinco commits, en un 83  \% de los casos la responsabilidad del error es menor del 50 \%.     
+   \end{enumerate}
+ Con esto, podemos decir que podría haber una tendencia marcada, en la cual, aquellos tickets que tengan más de cinco commits previos, la mayor parte de ellos no son responsables de haber introducido el error. Mientras que para tickets con 3 y 4 commits previos, la responsabilidad que ejercen la mayor parte de los commits previos es elevada.
+ 
+\begin{table}[hr]
+\centering
+\begin{tabular}[t]{|l |c |c |r|}
+\hline
+\multicolumn{4}{|c|}{Grade of total responsability of each commit inside a ticket} \\ \hline
+Number of commits & less than 50 \% & responsibility = 50 \% & more than 50 \% \\
+\hline\hline
+2 & 0 & 57,14 & 43,86\\
+\hline
+3 & 0 & 0 & 100\\
+\hline
+4 & 33,33 & 0 & 66,66\\
+\hline
++5 & 83,33 & 3 & 16,66\\ \hline
+\end{tabular}
+\caption{Grado de responsabilidad de cada commit dentro de un ticket}
+\label{tabla:firstStageTypeMoreOne}
+\end{table}
+
+En las gráficas inferiores se muestra unos gráficos de barras obtenidos con los datos de las tablas ~\ref{firstStageTypeMoreOne} 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1.1\textwidth]{img/responsability} 
+	\caption{Grado de responsabilidad de cada uno de los commits en un ticket} \label{fig:responsability}
+\end{figure}
 
 
+\section{Resultados generales}
+\label{sec:resultadosGenerales}
 
+Ahora es el momento de evaluar todos los resultados obtenidos en las dos secciones previas, y decidir cual será el el futuro de nuestro trabajo de investigación.
+
+Los resultados obtenidos en la primera fase, no nos aportan demasiado en nuestro estudio de investigación, no obstante, son resultados bastante apropiados para tenerlos en cuenta en versiones futuras de nuestra herramienta. De tal manera que la herramienta facilite dichos resultados para que sirvan de apoyo a los desarrolladores en el momento de tomar realizar la primera fase. Creemos que de esta manera el numero de tickets agrupados bajo la etiqueta de 'No sabemos clasificarlo' se reduzca, reduciendo así el error cometido en la clasificación final.
+
+En realidad, los resultados que nos interesaban son los obtenidos en la segunda fase. en esta fase hemos podido corroborar empíricamente que la asunción actual acerca de que el commit previo es el responsable del error no se cumple para todos los casos, y por tanto nuestra investigación puede seguir su rumbo. A pesar de haber analizado una población de tickets pequeña, tenemos la certeza que el no analizar la responsabilidad de los tickets previos provoca un error en los resultados, por tanto, si seguimos en este área investigando y llegando a resultados más fiables podremos aportar un nuevo punto de vista al Bug seeding.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -887,59 +1157,86 @@ El aspecto que posee la web tras haber pinchado en la pestaña 'MODIFY' aparece e
 \cleardoublepage
 \chapter{Conclusiones}
 \label{chap:conclusiones}
-
-
+Con este capítulo llegamos al final de nuestra memoría, describiremos en él si los objetivos marcados en los primeros capitulos se han cumplido o no. Hablaremos además, sobre los conocimientos aplicados y las lecciones aprendidas en el transcurso de este proyecto, así como de las líneas de trabajo futuro. Finalizando dicho capítulo con una valoración personal.
+ 
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos,
-donde se planteaba el objetivo general y se elaboraban los específicos.
+Analizando los objetivos descritos en el capítulo ~\ref{chap:objetivos}, hemos sido capaces de situar al lector en un plano en el que pueda entender la literatura actual sobre el área de conocimiento que engloba el Bug seeding, comprendiendo la necesidad de investigar la importancia que el commit previo ejerce en la responsabilidad de un error.
 
-Es aquí donde hay que debatir qué se ha conseguido y qué no. Cuando algo no
-se ha conseguido, se ha de justificar, en términos de qué problemas se han
-encontrado y qué medidas se han tomado para mitigar esos problemas.
+Hemos aportado datos y gráficas obtenidas tras las fases de las que consta nuestro experimento. Dichos datos incitan a seguir investigando, dándole un mayor alcance a la investigación, puesto que creemos que los resultados son favorables a nuestro planteamiento. Por tanto, nuestro trabajo de investigación seguirá evolucionando y para ello la herramienta desarrollada servirá de gran ayuda. 
+
+Podemos afirmar que el estudio ha servido para validar nuestra herramienta, y que su uso pueda servir de ayuda en estudios posteriores. Además la herramienta posee un carácter genérico, por tanto no solo sirve para el estudio de Cinder, si no que se puede usar para analizar cualquier otro componente de OpenStack, característica importante en el trabajo futuro.
 
 
 \section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado
-en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y
-comentar en un párrafo los conocimientos y habilidades puestos en práctica.
+Muchos han sido los conocimientos adquiridos en estos dos años de Máster, gracias a ellos, el trabajo descrito en la presente memoria ha sido más fácil. Asignaturas como DAT  \textit{Desarrollo de Aplicaciones Telemáticas}, ISRH  \textit{Integración de Servicios y Redes Heterogéneas}, ISI  \textit{Ingenieria de Sistemas de Información} ó GORS  \textit{Gestión y OperacióN de Redes y Servicios}, han aportado las tablas para poder manejarme, con relativa soltura, a la hora de programar ó para resolver problemas. 
+
+Los conocimientos y habilidades previamente adquiridos durante los cursos, de los cuales he hecho uso durante este trabajo fin de máster, son los siguientes: 
 
 \begin{enumerate}
-  \item a
-  \item b
+  \item Se han aplicado los conocimientos sobre las tecnologías que engloban HTML5, así como el lenguaje JavaScript y el entorno NodeJS, adquiridos en las asignaturas anteriormente nombradas. 
+  \item Una de las grandes habilidades que me ha aportado el TFM, es el aumento de la capacidad autodidacta que todo trabajo de investigaciïn requiere. Durante el máster, muchas de las asignaturas requerían cierto trabajo de investigación por parte del alumno. Los profesores aportaban ideas y conocimientos para que fuese el propio alumno quien llegase a una solución válida, potenciando de esta manera el aumento de la capacidad autodidacta.
+ \item Por ultimo, se han aplicado los conocimientos en la integración de diferentes tecnologías para lograr crear un Mushup, en el cuál se integran varias herramientas en una sola. Asignaturas como DAT e ISRH ayudaron en que la herramienta se desarrollase con mayor velocidad.
 \end{enumerate}
 
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+Durante el desarrollo del TFM, muchos han sido los conocimientos adquiridos, ya que dicho TFM empieza con el estudio y entendimiento de un nuevo campo de conocimiento llamado Bug Seeding, en el cuál encontramos unas motivaciones que nos llevaron a realizar un estudio empírico. Y fue durante el desarrollo del estudio cuando encontramos la necesidad de crear una herramienta que nos proporcionase ayuda en nuestro análisis. 
 
+Por tanto, puedo enumerar cuales han sido los conocimientos y/o habilidades adquiridos:
 \begin{enumerate}
-  \item a
-  \item b
+   \item Profundizar los conocimientos sobre el  \textit{FLOSS}. 
+   \item Comprensión del estado actual en el que se encuentra el campo de conocimiento tratado en este TFM, el Bug Seeding.
+   \item Aprendizaje de la metodología de trabajo que posee un gran proyecto como es OpenStack, entendiendo el uso de herramientas como Launchpad y Gerrit en dicho proyecto.
+   \item Creación de una APIRestFul necesaria en nuestra herramienta.
+   \item Montar un servidor node en una maquina virtual que albergue nuestra herramienta. (todavía no está hecho )
+   \item Describir una metodología detallada y precisa, de tal manera que pueda ser automatizada, facilitando el estudio a los desarrolladores.
+   \item Adentrarme en el entendimiento del lenguaje, desconocido para mi, Python.
 \end{enumerate}
 
+Las lecciones que puedo sacar tras todo el trabajo realizado en el TFM son:
+\begin{enumerate}
+\item En los primeros meses de la investigación, el deseo de obtener los primeros resultados con la mayor rapidez posible, provocó una pérdida tiempo analizando tickets sin llegar a entender en profundidad cual era el objetivo final. Teniendo que repetir, en varias ocasiones, el análisis. Por tanto, entendí que es más importante dedicar el tiempo necesario a entender los objetivos y el problema que se plantea antes de conseguir resultados rápidos.
+\item  
+\end{enumerate}
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
 
-Ningún software se termina, así que aquí vienen ideas y funcionalidades
-que estaría bien tener implementadas en el futuro.
+Hay dos lineas de trabajo futuro, una relacionada con el trabajo de investigación y la otra relacionada con la herramienta que hemos desarrollado. A pesar de que ambas líneas debeán ser complementarías, podemos permitir que la línea de investigación siga su curso, llevando a cabo experimentos con nuevas ideas que han surgido gracias a la realización del TFM. Mientras que la herramienta puede seguir evolucionando y mejorando, aportando más funcionalidades, siempre y cuando siga cumpliendo las necesidades que el estudio de investigación requiera. 
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+Por todo ello, los trabajos futuros en la investigación son:
+\begin{itemize}
+	\item Extender la investigación a otros componentes de OpenStack.
+	\item Experimentar con los datos obtenidos y el machine learning en busca de características claves que nos ayuden a tomar la clasificar los tickets con la mayor precisión posible.
+	\item Obtener información más detallada sobre los commits y los ficheros involucrados, ya que podríamos obtener nuevas relaciones que nos ayuden en un futuro para predecir si el commit es responsable o no. Actualmente, no hemos realizado la extracción de dichas características en nuestro estudio.
+	\item Añadir nuevos campos para analizar, como son la hora, el día de la semana ó incluso en nombre del responsable de introducir el commit para encontrar alguna relación en el momento de introducir el error en el código.  
+\end{itemize}
 
+Si nos centramos en la herramienta, los posibles trabajos futuros se centran en:
+\begin{itemize}
+	\item Automatizar la segunda fase, incluyéndola en la herramienta.
+	\item Proporcionar una mayor interactividad con el usuario cubriendo sus necesidades, para ello sería imprescindible que un grupo de desarrolladores probasen nuestra herramienta y nos aportasen sugerencias ó mejoras.
+	\item Añadir la representación de gráficas y tablas de clasificación que actualmente no se encuentran disponibles como son aquellas obtenidas en la segunda fase del experimento.
+	\item Brindar al desarrollador sugerencias de clasificación basadas en las keywords y otras posibles características que puedan ayudar. Para ello previamente hemos tenido que usar machine learning.
+	\item Estandarizar todo lo posible la herramienta para que pueda usarse con cualquier proyecto que use Launchpad y Gerrit.
+	\item Optimizar al máximo el código, ya que no sabemos como puede afectarle el trabajar con una gran cantidad de datos.
+\end{itemize}
 
 \section{Valoración personal}
 \label{sec:valoracion}
+Hallar un nuevo area de conocimiento, antes desconocida para mi, en la cual hay muchas posibilidades de investigación, me ha aportado esa curiosidad de querer seguir investigando, aportando nuevas ideas y aprendiendo cada día un poco más sobre este tema. 
+ 
+El esfuerzo ejercido durante la investigación y las fases de análisis se ve recompensado al llegar a obtener datos que avalan una teoría inicial. Además poder crear una herramienta que permita ahorrar tiempo de análisis, en la cual puedas añadir funcionalidades dependiendo de tus necesidades, es realmente gratificante.
 
-Finalmente (y de manera opcional), hay gente que se anima a dar su punto de
-vista sobre el proyecto, lo que ha aprendido, lo que le gustaría haber aprendido,
-las tecnologías utilizadas y demás.
+Poder hacer uso de las tecnologías más activas actualmente como son HTML5 y Bootstrap y afianzar de la misma manera los conocimientos sobre JavaScript y Jquery, me ha aportado una mayor seguridad para afrontar futuros retos en los cuales se requiera el uso de estas tecnologías.
 
+Por todo ello, me gustaría concluir diciendo que la valoración personal ha sido realmente positiva, he aprendido muchas cosas las cuales podré aplicar en el futuro, tanto a nivel personal como a nivel profesional, y me siento en el deber de dar las gracias al grupo de LibreSoft, ya que son ellos los que me han ayudado en todo momento para en el TFM.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -949,8 +1246,10 @@ las tecnologías utilizadas y demás.
 
 \cleardoublepage
 \appendix
+%\thispagestyle{empty} 
 \chapter{Manual de usuario}
 \label{app:manual}
+%\thispagestyle{empty} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -959,11 +1258,22 @@ las tecnologías utilizadas y demás.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-
 % Las siguientes dos instrucciones es todo lo que necesitas
 % para incluir las citas en la memoria
-\bibliographystyle{abbrv}
-\bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
+\nocite{*}
+\nocite{HTML5:Misc}
+\nocite{JavaScript:Misc}
+\nocite{JQuery:Misc}
+\nocite{CSS3:Misc}
+\nocite{Git:Misc}
+\nocite{Github:Misc}
+\nocite{Bootstrap:Misc}
+\nocite{Launchpad:Misc}
+\nocite{Gerrit:Misc}
+\nocite{Node:Misc}
+\bibliographystyle{alpha}
+\bibliography{memoria}
+  % memoria.bib es el nombre del fichero que contiene
 % las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
 % que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
 % formato BibTeX. Prueba a buscar en http://scholar.google.com por referencias
