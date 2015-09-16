@@ -31,6 +31,7 @@
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
 \usepackage{multirow} % para las tablas
+\usepackage{pdfpages}
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -228,8 +229,9 @@ El software libre y de código abierto, \textit{FLOSS}, nos ofrece la gran ventaj
 
 En sistemas  \textit{FLOSS} todo el mundo es bienvenido para contribuir en el desarrollo, tanto desarrolladores noveles como expertos contribuirán para mejorar el software. Por tanto, es imposible tratar de prevenir las necesidades de todos ellos, así como los errores que aparecerán. Cientos de desarrolladores tendrán que mantenerse activos en las actividades que precisan mantenimiento, corrigiendo errores, añadiendo nuevas características o mejorando las existentes. Por este motivo, se encontró la necesidad de desarrollar el proceso de Bug-Fixing, proceso en el cual se identifica el error y quien contribuyó en su arreglo.    
 
-Nuestra contribución, con este trabajo de investigación, se centra en el concepto de Bug-Seeding commit. El concepto Bug Seeding evalúa la cantidad de errores software que residen en un sistema, hallando el momento en el cual, el error fue introducido al sistema. [hablar mas sobre bug seeding mencionando herramientas o algo??????????]. 
-El pensamiento actual acerca de la responsabilidad de introducir el error en el código, señala al commit anterior como el responsable, como nos muestran los estudios como los desarrollados por [whitehead, zhimerber] , esta idea preconcebida se encuentra tan generalizada que la mayoría de estudios de investigación relacionados con el Bug Seeding parten de ella. Hasta el momento no hemos descubierto ningún estudio ó investigación empírica que trate de contribuir a este pensamiento generalizado, aportando datos ó porcentajes que muestren en cuantas ocasiones la literatura actual se cumple, y en cuantas ocasiones esta idea no es acorde con los datos.
+Nuestra contribución, con este trabajo de investigación, se centra en el concepto de Bug-Seeding commit. El concepto Bug Seeding evalúa la cantidad de errores software que residen en un sistema, hallando el momento en el cual, el error fue introducido al sistema. 
+
+El pensamiento actual acerca de la responsabilidad de introducir el error en el código, señala al commit anterior como el responsable de causar el error.  Zimmermann en uno de sus artículos cite{sliwerski2005changes} deja claro que el cambio anterior es el responsable de causar el posterior arreglo (\textit{'This earlier change is the one that caused the later fixed'}). Otros autores como James Whitehead, ni siquiera indican en sus artículos que el commit anterior es el responsable, si no que ya parten de esa idea, lo tienen asumido. Al igual que sucede con J. Whitehead, esta idea preconcebida se encuentra tan generalizada que la mayoría de estudios de investigación relacionados con el Bug Seeding parten de ella. Existen artículos recientes como \cite{fejzer2015supporting}, donde se presentan herramientas que detectan automáticamente los cambios que pueden ser futuros errores, pero estas herramientas también parten de la misma idea (\textit{' We assume that a change/commit is buggy if its modifications has been later altered by a bug-fix commit'}. Hasta el momento no hemos descubierto ningún estudio ó investigación empírica que trate de contribuir a este pensamiento generalizado, aportando datos ó porcentajes que muestren en cuantas ocasiones la literatura actual se cumple, y en cuantas ocasiones esta idea no es acorde con los datos.
 
 Debido a esta carencia en la literatura actual, decidimos desarrollar el estudio del que trata esta memoria. En la investigación se realiza un estudio empírico, el cual se encuentra explicado con mayor detalle en la sección  ~\ref{sec:estudiodone}, enfocado a descubrir el momento en el que un cambio en el código fuente provocó un error, y a partir de ese momento, poder identificar al/los responsables de dicho error, consiguiendo finalmente una evidencia empírica sobre el número de errores introducidos cuyo responsable fue el commit anterior, y aquellos errores introducidos en los que el commit anterior no ejerce ninguna responsabilidad.
 
@@ -1248,10 +1250,11 @@ Por todo ello, me gustaría concluir diciendo que la valoración personal ha sido 
 
 \cleardoublepage
 \appendix
-%\thispagestyle{empty} 
-\chapter{Manual de usuario}
-\label{app:manual}
-%\thispagestyle{empty} 
+\thispagestyle{empty} 
+\chapter{Artículo en progreso sobre el estudio}
+\label{app:articlel}
+\thispagestyle{empty} 
+\includepdf[pages={1-8}]{Bug_Insertion.pdf}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1284,3 +1287,4 @@ Por todo ello, me gustaría concluir diciendo que la valoración personal ha sido 
 % http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
 
 \end{document}
+
