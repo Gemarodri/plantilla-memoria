@@ -876,25 +876,25 @@ A continuación se enumeraran los requisitos que debe cumplir nuestra herramienta
 
 Cabe destacar que la herramienta solo proporciona automatización para la primera fase ó fase de filtrado, debido a que la segunda fase todavía recomendamos hacerla manualmente, ya que hay que tener muchos factores en cuenta al analizar código y probablemente, cuantos mas códigos analicemos mas situaciones diferentes podremos encontrarnos y deberíamos tenerlas todas ellas en consideración.
 
-La aplicación no es mas que una web dinámica en la que disponemos de tres pestañas  \textit{'Analyse', 'Statistics'} y  \textit{'Modify'}. Son en estas pestañas en las cuales se encuentran solventadas las necesidades enumeradas anteriormente. 
+La aplicación no es mas que una web dinámica en la que disponemos de tres pestañas  \textit{'Analyze', 'Statistics'} y  \textit{'Modify'}. Son en estas pestañas en las cuales se encuentran solventadas las necesidades enumeradas anteriormente. 
 
 En las siguientes secciones, vamos a describir la aplicación web desde cada una de las pestañas disponibles en ella. Es decir, describiendo cada una de las funcionalidades que nos ofrecen los distintos botones que podemos encontrar en la interfaz de usuario. Además de la descripción, se proporcionarán  capturas de pantalla realizadas a la aplicación web en las cuales se que muestran visualmente las funcionalidades que se describen.
 
-La primera captura de pantalla que nos encontramos, imáagen ~\ref{figura:Index}, muestra el aspecto inicial de nuestra aplicación Web. En ella podemos observar en la parte superior a la derecha, las tres pestañas que hemos comentado anteriormente. Por defecto la pestaña 'Analise' se muestra al abrir la aplicación.
+La primera captura de pantalla que nos encontramos, imáagen ~\ref{figura:Index}, muestra el aspecto inicial de nuestra aplicación Web. En ella podemos observar en la parte superior a la derecha, las tres pestañas que hemos comentado anteriormente. Por defecto la pestaña 'analize' se muestra al abrir la aplicación.
 \begin{figure}
     \centering
-    \includegraphics[scale=0.45]{img/Index}
+    \includegraphics[scale=0.4]{img/Index}
     \caption{Aspecto Web inicial}
     \label{figura:Index}
 \end{figure} 
 
-\section{Analyse}
+\section{Analyze}
 \label{subsec:analyse}
-En esta sección detallaremos cada una de las funcionalidades que nos ofrecen los botones así como el contenido que aparece en los formularios disponibles en la pestaña  \textit{'ANALYSE'} de nuestra applicación web.
+En esta sección detallaremos cada una de las funcionalidades que nos ofrecen los botones así como el contenido que aparece en los formularios disponibles en la pestaña  \textit{'ANALYZE'} de nuestra applicación web.
 
 La funcionalidad primordial de la herramienta web desarrollada, se aloja en esta pestaña. Nos vemos en la necesidad de analizar una gran cantidad de tickets para poder proporcionar datos fiables. Para ello, los tickets necesariamente tienen que tener carácter aleatorio, de esta forma eliminamos el sesgo que pueda tener los resultados de la investigación debido a nuestra eleción. 
 
-Para poder cumplir este objetivo, la aplicación dispone del botón  \textit{'START'}.  Al clicar sobre dicho botón, la herramienta consulta la página de la Launchpad y extrae de ella los primeros 75 tickets, de los cuales se mostrará el identificador de cada uno al usuario en tres columnas 'scrollables'. Además, internamente se estaá realizando una consulta al repositorio GIT que tenemos asociado a la investigación, y en el cual se almacenan los tickets que han sido analizados, para mostrarnos que tickets han sido analizados previamente, coloreando el identificador del ticket en verde y añadiendo el nombre del desarrollador que lo analizó. 
+Para poder cumplir este objetivo, la aplicación dispone del botón  \textit{'START'}.  Al clicar sobre dicho botón, la herramienta consulta la página de la Launchpad y extrae de ella los primeros 75 tickets, de los cuales se mostrará el identificador de cada uno al usuario en tres columnas 'scrollables'. Además, internamente se estaá realizando una consulta al repositorio GIT que tenemos asociado a la investigación, y en el cual se almacenan los tickets que han sido analizados, para mostrarnos que tickets han sido analizados previamente, coloreando el identificador del ticket en verde. %y añadiendo el nombre del desarrollador que lo analizó. 
 
 \begin{figure}
     \centering
@@ -950,8 +950,8 @@ Para conseguir esto, lo único que debe hacer el usuario es pulsar sobre el botón
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.45]{img/Statistics}
-    \caption{Visualización la Web tras pulsar la pestaña 'ANALYSE'}
+    \includegraphics[scale=0.38]{img/Statistics}
+    \caption{Visualización de la Web tras pulsar la pestaña 'ANALYZE'}
     \label{figura:Statistics}
 \end{figure}
 
