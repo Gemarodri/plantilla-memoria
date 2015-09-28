@@ -186,11 +186,11 @@ Además, en la memoria se presenta una herramienta desarrollada durante la invest
 %\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
 \markboth{SUMMARY}{SUMMARY} % encabezado
 
-We are involved in a research project, which is related to the area of knowledge of Software Engineering, that is focusing in Bug-Seeding. In this project, we carry out an empirical experiment where analyze the importance of a commit antecesor when a bug was inserted in the code. Generally the tools that facilitate the work in any research project are essentials. For this reason, and after obtained a specific methodology, the idea to develop a tool, that provide us support in our analysis, arose.
+This project is about a specific subject of software engineering, the study of how and when an error was inserted into source code, also known as bug seeding. We can find multiple tools that help us to prevent errors in the code analyzing its structure. But sometimes the errors are undetectables and pass the tests, causing the system to fail. This project contribute to understand the procedure implicated in bug seeding, providing information about how and when the error was introduced into the code. Tracking the bug inserted, and obtaining who was the responsible.
 
-In this thesis, the research project with their first conclusions and the tool  developed are shown. Where, the first conclusions and data extracted give us a slight possibility about our idea, allowing for open the debate about of the future of research project.
+We have conducted an observational study that englobes several tickets extract from a free and open-source cloud computing software platform. The experiment was focused as a first approach to prove the premise established does not hold for all cases. Understanding the importance of the previous commit in the errors.
 
-The tool developed uses various technologies, which will be explained in following chapters. But basically, on client side it uses HTML5 and JavaScript and on server side it uses Node.js. Furthermore, the research project will help us as  validation method for the tool.
+Furthermore, in this project we showed a tool developed, which automates one part of the methodology used to find the responsible of a bug. The tool minimizes the time required to analyzing the data extracted, and shows us intuitively all data in the same interface.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ÍNDICES %
@@ -1198,7 +1198,7 @@ En las gráficas inferiores se muestra unos gráficos de barras obtenidos con los 
 Tras la realización de este proyecto se han obtenido dos items, el primero de ellos se trata del estudio empírico realizado, del que tenemos resultados favorables para continuar investigando en este área. El segundo item, se trata de la herramienta desarrollada que servirá de ayuda en los consiguientes análisis.
 
 La duración del proyecto ha sido aproximadamente un año, los primeros seis meses estuvieron dedicados a entender el problema, realizando pruebas y análisis iniciales con el fin de acabar encontrando una metodología adecuada. Los siguientes dos meses, estuvieron dedicados a analizar los 100 tickets extraídos del proyecto Cinder, en la fase de análisis conté con la ayuda de mi compañera Andrea Villaverde, debatiendo opiniones y comprobando que la metodología descrita era la adecuada.
-La herramienta fue desarrollada y validada durante los ultimo cuatro meses, añadiendo cada vez mas funcionalidades, hasta cumplir con los objetivos. Obteniendo una herramienta que posee aproximadamente de 1000 lêneas de código desarrollado.
+La herramienta fue desarrollada y validada durante los ultimo cuatro meses, añadiendo cada vez mas funcionalidades, hasta cumplir con los objetivos. Obteniendo una herramienta que posee aproximadamente de 1000 líneas de código desarrollado accesibles en \footnote{\url{https://github.com/Gemarodri/BugTracking}}. La herramienta se encuentra disponible en \url{http://bugtracking.libresoft.es}, por tanto cualquier persona que quiera probarla puede hacerlo.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1209,7 +1209,7 @@ La herramienta fue desarrollada y validada durante los ultimo cuatro meses, añad
 \cleardoublepage
 \chapter{Conclusiones}
 \label{chap:conclusiones}
-Con este capítulo llegamos al final de nuestra memoría, describiremos en él si los objetivos marcados en los primeros capitulos se han cumplido o no. Hablaremos además, sobre los conocimientos aplicados y las lecciones aprendidas en el transcurso de este proyecto, así como de las líneas de trabajo futuro. Finalizando dicho capítulo con una valoración personal.
+Con este capítulo llegamos al final de nuestra memoria, describiremos en él si los objetivos marcados en los primeros capitulos se han cumplido o no. Hablaremos además, sobre los conocimientos aplicados y las lecciones aprendidas en el transcurso de este proyecto, así como de las líneas de trabajo futuro. Finalizando dicho capítulo con una valoración personal.
  
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
@@ -1306,7 +1306,7 @@ Por todo ello, me gustaría concluir diciendo que la valoración personal ha sido 
 \thispagestyle{empty} 
 \chapter{Artículo realizado}
 \label{app:articlel}
-En la memoria se adjunta el artículo que describe la investigación llevadoa a cabo. El artículo plantea y da respuesta a ciertas preguntas de investigación, y detalla el proceso seguido para extraer los datos de los que hemos obtenidos distintas gráficas y conclusiones
+En la memoria se adjunta el artículo que hemos escrito, donde se describe detalladamente la investigación llevada a cabo. El artículo plantea y da respuesta a ciertas preguntas de investigación, y detalla el proceso seguido para extraer los datos de los que hemos obtenidos distintas gráficas y conclusiones
 
 \thispagestyle{empty} 
 \includepdf[pages={1-9}]{Bug_Insertion.pdf}
