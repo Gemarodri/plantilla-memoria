@@ -179,6 +179,8 @@ Partiendo de una teoría actualmente asumida por desarrolladores expertos en este
 
 Además, en la memoria se presenta una herramienta desarrollada durante la investigación, cuyo objetivo es mecanizar la fase de análisis lo máximo posible, ayudándonos a ahorrar tiempo en la extracción de datos y mostrándo de manera atractiva la información que ayuda a los desarrolladores a tomar sus decisiones. Cabe mencionar, que la herramienta se encuentra validada por nuestro análisis, y ha sido diseñada para trabajar con el proyecto que estábamos investigando. Por tanto, actualmente no da soporte para analizar otros proyectos.
 
+En \url{http://gemarodri.github.io/Presentacion/} podemos encontrar una web que reúne todos los recursos disponibles en el TFM, como son esta memoria, la herramienta desarrollada y su código fuente. Además, hemos añadido una demo en la que se presenta el funcionamiento de la herramienta. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
 
@@ -1043,7 +1045,7 @@ Unknown & 16 \\ \hline
 \label{tabla:firstStage}
 \end{table}
 
-La primera tabla obtenida, cuadro ~\ref{tabla:firstStage}, representa el porcentaje de tickets para cada una de las tres clasificaciones. En la cual, podemos ver que de los 100 tickets analizados mas de 50 \% son clasificados como tickets que notifican un verdadero error, mientras que un 21 \% de los tickets describían situaciones que no han sido consideradas como error debido a que eran actualizaciones requeridas, nuevas funcionalidades ó otros casos. En esta tabla se observa también como un 16 \% de los tickets no han podido ser clasificados con la etiqueta error ó no error, es un porcentaje relativamente pequeño como para que pueda influir en gran medida en los resultados de la segunda fase. A pesar de ello, en este momento se asumirá que estamos cometiendo un pequeñ error en los datos de la siguiente fase debido a este 16 \%.
+La primera tabla obtenida, cuadro ~\ref{tabla:firstStage}, representa el porcentaje de tickets para cada una de las tres clasificaciones. En la cual, podemos ver que de los 100 tickets analizados mas de 50\% son clasificados como tickets que notifican un verdadero error, mientras que un 21\% de los tickets describían situaciones que no han sido consideradas como error debido a que eran actualizaciones requeridas, nuevas funcionalidades ó otros casos. En esta tabla se observa también como un 16\% de los tickets no han podido ser clasificados con la etiqueta error ó no error, es un porcentaje relativamente pequeño como para que pueda influir en gran medida en los resultados de la segunda fase. A pesar de ello, en este momento se asumirá que estamos cometiendo un pequeñ error en los datos de la siguiente fase debido a este 16\%.
 
 La segunda tabla obtenida, cuadro ~\ref{tabla:firstStageImportance}, muestra el porcentaje de los tickets agrupados en una categoría, dependiendo de la importancia que se les dió en la Launchpad a lo largo de su vida.  En la figura ~\ref{fig:degree} podemos ver dichos datos en un gráfico de barras.
 \begin{table}[htb]
@@ -1075,10 +1077,10 @@ Undecided & 10 & 8 & 1 \\ \hline
 
 La conclusión que podemos extraer de esta tabla, asumiendo que la comunidad de Launchpad usa con criterio las etiquetas de importancia en sus tickets, son las siguientes:
 \begin{enumerate}
-    \item Un ticket cuya etiqueta de importancia sea  \textit{Critical} tiene un 66,66 \% de posibilidades de ser un error.
-    \item Un ticket cuya etiqueta de importancia sea  \textit{High} tiene un 71,42 \% de posibilidades de ser un error.  \item Un ticket cuya etiqueta de importancia sea 'Medium' tiene un 69,56 \% de posibilidades de ser un error.  
-    \item Un ticket cuya etiqueta de importancia sea  \textit{Low} tiene un 47,05 \% de posibilidades de ser un error.
-    \item Un ticket cuya etiqueta de importancia sea  \textit{Undecided} tiene un 52,63 \% de posibilidades de ser un error.    
+    \item Un ticket cuya etiqueta de importancia sea  \textit{Critical} tiene un 66,66\% de posibilidades de ser un error.
+    \item Un ticket cuya etiqueta de importancia sea  \textit{High} tiene un 71,42\% de posibilidades de ser un error.  \item Un ticket cuya etiqueta de importancia sea 'Medium' tiene un 69,56\% de posibilidades de ser un error.  
+    \item Un ticket cuya etiqueta de importancia sea  \textit{Low} tiene un 47,05\% de posibilidades de ser un error.
+    \item Un ticket cuya etiqueta de importancia sea  \textit{Undecided} tiene un 52,63\% de posibilidades de ser un error.    
    \end{enumerate}
 
 Por lo tanto, el factor de importancia de un ticket, podría ser considerado como ayuda para los desarrolladores a la hora de decidir si un ticket es error o no lo es. Además, este factor puede utilizarse conjuntamente con la presencia de ciertas palabras o keywords para proporcionar unos mejores resultados.
@@ -1087,7 +1089,7 @@ Por lo tanto, el factor de importancia de un ticket, podría ser considerado como
 \label{sec:resultadosF2}
 En esta sección hablaremos sobre los datos obtenidos en la segunda fase de clasificación, donde los resultados indican cual es la responsabilidad que ejercen los commits inmediatamente anteriores en la responsabilidad del error introducido en el código fuente.
 
-La primera tabla obtenida, cuadro ~\ref{tabla:secondStage}, muestra el porcentaje de commits previos en cada una de las tres categorías. En ella observamos como en el 33,08 \% de los commits previos que han sido analizados y que han formado parte de la insercción de un error en el código, no son responsables.
+La primera tabla obtenida, cuadro ~\ref{tabla:secondStage}, muestra el porcentaje de commits previos en cada una de las tres categorías. En ella observamos como en el 33,08\% de los commits previos que han sido analizados y que han formado parte de la insercción de un error en el código, no son responsables.
 \begin{table}[htb]
 \centering
 \begin{tabular}{|l |c|}
@@ -1103,7 +1105,7 @@ Unknown & 17,29 \\ \hline
 \label{tabla:secondStage}
 \end{table}
 
-Acabamos de demostrar con datos obtenidos en nuestro experimento empírico, que la actual premisa establecida en la literatura acerca de que el responsable de añadir un error en el código es el commit previo solo se cumple en un 49,62 \% de los casos. Este dato no puede ser considerado como muy fiable puesto que hemos analizado una población pequeña de tickets, concretamente 100, de los cuales solamente 63 han pasado la fase de filtrado. A pesar de no poder asegurar que estos porcentajes se cumplan al analizar una población mayor de tickets, si podemos asegurar que hay una leve tendencia que nos indica a pensar que no todos los commits previos son responsables.
+Acabamos de demostrar con datos obtenidos en nuestro experimento empírico, que la actual premisa establecida en la literatura acerca de que el responsable de añadir un error en el código es el commit previo solo se cumple en un 49,62\% de los casos. Este dato no puede ser considerado como muy fiable puesto que hemos analizado una población pequeña de tickets, concretamente 100, de los cuales solamente 63 han pasado la fase de filtrado. A pesar de no poder asegurar que estos porcentajes se cumplan al analizar una población mayor de tickets, si podemos asegurar que hay una leve tendencia que nos indica a pensar que no todos los commits previos son responsables.
 
 Es mas, si dividimos aquellos tickets en los que solo ha habido un commit previo implicado, de aquellos en los que ha habido más de un commit implicado, los resultados son, cuanto menos, curiosos. A continuación se muestran los porcentajes de los commits anteriores en cada una de las tres categoías, tanto para el caso de que solo tengamos un commit antecesor, cuadro ~\ref{tabla:secondStageOne}, como para el caso de los que tienen mas de un commit, cuadro ~\ref{tabla:secondStageMore}.
 \begin{table}[htb]
@@ -1123,10 +1125,10 @@ Unknown & 12,24 \\ \hline
 
 De los 63 tickets que pasaron a la segunda fase, 29 de ellos solamente tenían un commit previo involucrado, mientras que 25 de los tickets tenían más de un commit. A los 9 tickets restantes no se encontró ningón commit previo puesto que los errores se habían solucionado en el repositorio de otro de los componentes de OpenStack distinto a Cinder.
 
-Ahora bien, en la tabla ~\ref{tabla:secondStageOne} situada encima de este párrafo y perteneciente a los tickets con solo un commit, podemos observar como en el 75,86 \% de los tickets, el commit previo fue el responsable de introducir el error. Mientras que solamente el 6,90 \% de commits no tuvieron responsables del error. 
+Ahora bien, en la tabla ~\ref{tabla:secondStageOne} situada encima de este párrafo y perteneciente a los tickets con solo un commit, podemos observar como en el 75,86\% de los tickets, el commit previo fue el responsable de introducir el error. Mientras que solamente el 6,90\% de commits no tuvieron responsables del error. 
 En este caso podemos pensar que nuestra hipótesis no es significativa y se podría seguir con la premisa actual de que el commit previo es el responsable del error, en cierto caso algo lógico puesto que solamente un commit previo se ve implicado.  
 
-Lo interesante aparece cuando observamos la tabla, cuadro \ref{tabla:secondStageMore} con los resultados de los tickets en los cuales hay implicados más de un commit previo. En donde podemos comprobar como nuestra hipótesis vuelve a recobrar fuerza, ya que el porcentaje de commits previos responsables y el porcentaje de commits previos no responsables se puede considerar idénticos, puesto que en un 46 \% de los casos el commit previo es responsable mientras que en un 44 \% de los casos el commit previo no es responsable.
+Lo interesante aparece cuando observamos la tabla, cuadro \ref{tabla:secondStageMore} con los resultados de los tickets en los cuales hay implicados más de un commit previo. En donde podemos comprobar como nuestra hipótesis vuelve a recobrar fuerza, ya que el porcentaje de commits previos responsables y el porcentaje de commits previos no responsables se puede considerar idénticos, puesto que en un 46\% de los casos el commit previo es responsable mientras que en un 44\% de los casos el commit previo no es responsable.
  
 \begin{table}[htb]
 \centering
@@ -1200,8 +1202,7 @@ Tras la realización de este proyecto se han obtenido dos items, el primero de el
 La duración del proyecto ha sido aproximadamente un año, los primeros seis meses estuvieron dedicados a entender el problema, realizando pruebas y análisis iniciales con el fin de acabar encontrando una metodología adecuada. Los siguientes dos meses, estuvieron dedicados a analizar los 100 tickets extraídos del proyecto Cinder, en la fase de análisis conté con la ayuda de mi compañera Andrea Villaverde, debatiendo opiniones y comprobando que la metodología descrita era la adecuada.
 La herramienta fue desarrollada y validada durante los ultimo cuatro meses, añadiendo cada vez mas funcionalidades, hasta cumplir con los objetivos. Obteniendo una herramienta que posee aproximadamente de 1000 líneas de código desarrollado accesibles en \footnote{\url{https://github.com/Gemarodri/BugTracking}}. La herramienta se encuentra disponible en \url{http://bugtracking.libresoft.es}, por tanto cualquier persona que quiera probarla puede hacerlo.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+En \url{http://gemarodri.github.io/Presentacion/} podemos encontrar una web que reúne todos los recursos disponibles en el TFM, como son la memoria, la herramienta desarrollada y su código fuente. Además hemos añadido una demo en la que se presenta el funcionamiento de la herramienta. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CONCLUSIONES %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
