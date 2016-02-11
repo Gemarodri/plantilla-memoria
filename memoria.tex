@@ -790,7 +790,7 @@ A continuación se muestran dos claros ejemplos que explican cuando el commit pre
 En la imagen  ~\ref{fig:responsible} se observa el estado del fichero en tres versiones diferentes, la primera (1) es una vez que el error ha sido arreglado, la segunda (2) es donde se encuentra la línea con el error, y finalmente la tercera versión (3) muestra el estado del fichero antes de que el error se insertase. En la versión (3) se muestra el commit padre del commit previo 31f208423 al arreglo del error, de esta manera podemos asegurarnos de que en ese commit se insertó el error, puesto que usó un string como variable cuando debería haber usado un Booleano para mantener la concordancia con el resto del código. 
 \begin{figure}
   \centering
-   \includegraphics[height=2in,width=7.2in]{img/responsible}
+   \includegraphics[height=2in,width=6.8in]{img/responsible}
   \caption{Ejemplo de cuando el cambio insertado en el commit previo,31f208423, causó el error.La versíon del código mas reciente se encuentra a la izquierda (1)}
   \label{fig:responsible}
 \end{figure}
@@ -798,7 +798,7 @@ En la imagen  ~\ref{fig:responsible} se observa el estado del fichero en tres ve
 En la imagen \ref{fig:noResponsible} se observa el estado del fichero en tres versiones diferentes, la primera (1) es una vez que el error ha sido arreglado, la segunda (2) es donde se encuentra la supuesta línea que contiene el error, y finalmente la tercera versión (3) muestra el estado del fichero antes de insertar la supuesta línea con el error. En esta ocasión, tras analizar los comentarios y el código, no podemos atribuir el commit previo como responsable del error, puesto que en este caso después de actualizar cierta versión en  el código, el nombre del argumento de una variable cambió, provocando de esta manera el fallo en el código. Pero este fallo no se debe a que se insertase ningún error en la línea 323, puesto que antes de actualizar la versión el código funcionaba perfectamente, es decir, en la version (2) el código no tenía ningún error en su contexto. Por tanto, este ejemplo muestra cuando un error es causa de nuevos requisitos en el software y no podemos atribuir al commit previo como causante del error.
 \begin{figure}
   \centering
-   \includegraphics[height=2in,width=7.2in]{img/noResponsible}
+   \includegraphics[height=2in,width=6.8in]{img/noResponsible}
   \caption{Ejemplo donde el commit previo, 0dc91bed, no causó el error. La versíon del código mas reciente se encuentra a la izquierda (1)}
   \label{fig:noResponsible}
 \end{figure}
