@@ -1106,25 +1106,25 @@ Por lo tanto, el factor de importancia de un ticket, podría ser considerado como
   
 \subsection{Resultados segunda fase}
 \label{sec:resultadosF2}
-En esta sección hablaremos sobre los datos obtenidos en la segunda fase de clasificación, donde los resultados indican la responsabilidad que ejercen los commits inmediatamente anteriores en el error introducido en el código fuente.
+En esta sección hablaremos sobre los datos obtenidos en la segunda fase de clasificación, donde los resultados indican si fue el/los commits inmediatamente anteriores el/los causantes de insertar el error introducido en el código fuente.      
 
-La primera tabla obtenida, cuadro ~\ref{tabla:secondStage}, muestra el porcentaje de commits previos en cada una de las tres categorías. En ella observamos como en el 33,08\% de los commits previos que han sido analizados y que han formado parte de la insercción de un error en el código, no son responsables.
+La primera tabla obtenida, cuadro ~\ref{tabla:secondStage}, muestra el porcentaje de commits previos en cada una de las tres categorías. En ella hemos identificado 124 commit previos, y tras analizarlos observamos como en el 36\% de ellos no insertaron el error en el momento en que se introdujo la línea en el código.
 \begin{table}[htb]
 \centering
-\begin{tabular}{|l |c|}
+\begin{tabular}{|l |c |c|}
 \hline
-\multicolumn{2}{|c|}{Classification Second Stage} \\ \hline
-Responsibility & Number of commits (\%) \\
+\multicolumn{3}{|c|}{Classification Second Stage} \\ \hline
+Classification & Number of commits & Percentage (\%) \\
 \hline \hline
-It is responsible & 49,62 \\ \hline
-It is not responsible & 33,08 \\ \hline
-Unknown & 17,29 \\ \hline
+It is responsible & 66 & 53 \\ \hline
+It is not responsible & 44 & 36 \\ \hline
+Unknown & 14 & 11  \\ \hline
 \end{tabular}
 \caption{Clasificación de la responsabilidad del commit anterior }
 \label{tabla:secondStage}
 \end{table}
 
-Acabamos de demostrar con datos obtenidos en nuestro experimento empírico, que la actual premisa establecida en la literatura acerca de que el responsable de añadir un error en el código es el commit previo sólo se cumple en un 49,62\% de los casos. Este dato no puede ser considerado como muy fiable puesto que hemos analizado una población pequeña de tickets, concretamente 100, de los que solamente 63 han pasado la fase de filtrado. A pesar de no poder asegurar que estos porcentajes se cumplan al analizar una población mayor de tickets, si podemos asegurar que hay una leve tendencia que nos indica a pensar que no todos los commits previos son responsables.
+Acabamos de demostrar con los datos obtenidos en nuestro experimento empírico, que la actual premisa establecida en la literatura acerca de que el responsable de añadir un error en el código es el commit previo, sólo se cumple en un 53\% de los casos. Este dato no puede ser generalizado puesto que hemos analizado una población relativamente pequeña de tickets, concretamente 100, de los que solamente 63 han pasado la fase de filtrado. A pesar de no poder asegurar que estos porcentajes se cumplan al analizar una población mayor de tickets, si podemos asegurar que hay una leve tendencia que nos indica a pensar que no todos los commits previos son responsables.
 
 Es más, si dividimos aquellos tickets en los que sólo ha habido un commit previo implicado, de aquellos en los que ha habido más de un commit implicado, los resultados son, cuanto menos, curiosos. A continuación se muestran los porcentajes de los commits anteriores en cada una de las tres categoías, tanto para el caso de que sólo tengamos un commit antecesor, cuadro ~\ref{tabla:secondStageOne}, como para el caso de los que tienen más de un commit, cuadro ~\ref{tabla:secondStageMore}.
 \begin{table}[htb]
@@ -1142,7 +1142,7 @@ Unknown & 12,24 \\ \hline
 \label{tabla:secondStageOne}
 \end{table}
 
-De los 63 tickets que pasaron a la segunda fase, 29 de ellos solamente tenían un commit previo involucrado, mientras que 25 de los tickets tenían más de un commit. A los 9 tickets restantes no se encontró ningón commit previo puesto que los errores se habían solucionado en el repositorio de otro de los componentes de OpenStack distinto a Cinder.
+De los 63 tickets que pasaron a la segunda fase, 29 de ellos solamente tenían un commit previo involucrado, mientras que 25 de los tickets tenían más de un commit. A los 9 tickets restantes no se encontró ningón commit previo puesto que los errores se habían solucionado en el repositorio de otro de los componentes de OpenStack distinto a Cinder y no pudimos extraer los datos.
 
 Ahora bien, en la tabla ~\ref{tabla:secondStageOne} situada encima de este párrafo y perteneciente a los tickets con sólo un commit, podemos observar como en el 75,86\% de ellos, el commit previo fue el responsable de introducir el error. Mientras que solamente el 6,90\% de los commits no fuero responsables del error. 
 En este caso, podemos pensar que nuestra hipótesis no es significativa y se podría seguir con la premisa actual de que el commit previo es el responsable del error, en cierto caso algo lógico puesto que solamente un commit previo se ve implicado.  
