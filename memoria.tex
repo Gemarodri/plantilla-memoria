@@ -818,11 +818,11 @@ La imagen ~\ref{fig:diff} muestra la salida del comando diff al comparar ambos f
 \subsection{Clasificación}
 \label{sec:clasificacion2}
 
-Tras seguir el procedimiento descrito anteriormente, obtenemos una lista con los posibles identificadores de commit causantes del error. El siguiente paso es analizar cada uno de los commits y clasificarlos en uno de estos tres grupos, dependiendo de su responsabilidad en la aparición del error. 
+Tras seguir el procedimiento descrito anteriormente, obtenemos una lista con los posibles identificadores de commit causantes del error. El siguiente paso es analizar cada uno de los commits y clasificarlos en uno de estos tres grupos, dependiendo de su responsabilidad en la aparición del error. Teniendo en cuenta siempre el momento, y el contexto del projecto, en el que la supuesta linea que contiene el error fué añadida/modificada al código fuente.
 \begin{enumerate}
-    \item Es el responsable : Cuando tenemos claro que el commit ha provocado el error. 
-     \item No es el responsable : Cuando tenemos claro que el commit no ha provocado el error. Como por ejemplo cambios en las llamadas a la API, el cambio de nombre a una variable, etc.
-    \item No podemos saberlo : Cuando no somos capaces de identificar si el commit ha provocado el error o no.
+    \item Es el responsable : Cuando tenemos claro que el commit ha provocado el error. Una condición mal escrita, el mal uso de las variables, etc.
+     \item No es el responsable: Cuando tenemos claro que el commit no ha provocado el error. Como por ejemplo cambios en las llamadas a la API, el cambio de nombre a una variable, etc. 
+    \item No podemos saberlo : Cuando no somos capaces de identificar si el commit ha provocado el error o no. En algunas ocasiones hay demasiados commits previos y la descripción es demasiado vaga como para identificar cual de los cambios causó el error, en otras ocasiones el no ser experto del lenguaje usado y del projecto nos impide saber si el commit previo insertó o no el error. 
 \end{enumerate}
 
 Como es normal, un parche realizado en el código para solventar el error, puede tocar varios ficheros y en cada fichero podría estar implicado mas de un commit previo diferente. Por tanto, podemos tener situaciones en las que el responsable del error sea mas de un commit previo.
@@ -1067,20 +1067,22 @@ La primera tabla obtenida, cuadro ~\ref{tabla:firstStage}, representa el porcent
 La segunda tabla obtenida, cuadro ~\ref{tabla:firstStageImportance}, muestra el porcentaje de los tickets agrupados en una categoría, dependiendo de la importancia que se les dió en Launchpad a lo largo de su vida.  En la figura ~\ref{fig:degree} podemos ver dichos datos en un gráfico de barras.
 \begin{table}[htb]
 \centering
-\begin{tabular}[t]{|l |c |c |r|}
+\begin{tabular}[t]{|l |c |c |c |r|}
 \hline
-\multicolumn{4}{|c|}{Classification depend of the importance} \\ \hline
-Importance & It is an error & it is not an error & Unknown \\
+\multicolumn{5}{|c|}{Classification depend of the importance} \\ \hline
+Importance & It is an error & it is not an error & Unknown & Total \\
 \hline\hline
-Critical & 4 & 1 & 1\\
+Critical & 4 & 1 & 1 & 6\\
+\hline 
+High & 25 & 3 & 7 & 35\\
 \hline
-High & 25 & 3 & 7\\
+Medium & 16 & 3 & 4 & 23\\
 \hline
-Medium & 16 & 3 & 4\\
+Low & 8 & 6 & 3 & 17\\
 \hline
-Low & 8 & 6 & 3\\
+Undecided & 10 & 8 & 1 & 19\\ 
 \hline
-Undecided & 10 & 8 & 1 \\ \hline
+Total & 63 & 21 & 16 & 100 \\ \hline
 \end{tabular}
 \caption{Clasificación de los tickets dependiendo la importancia de éstos en Launchpad  }
 \label{tabla:firstStageImportance}
@@ -1253,8 +1255,8 @@ Los conocimientos y habilidades previamente adquiridos durante los cursos, de lo
 
 \begin{enumerate}
   \item Se han aplicado los conocimientos sobre las tecnologías que engloban HTML5, así como el lenguaje JavaScript y el entorno NodeJS, adquiridos en las asignaturas anteriormente nombradas. 
-  \item Una de las grandes habilidades que me ha aportado el TFM, es el aumento de la capacidad autodidacta que todo trabajo de investigaciïn requiere. Durante el máster, muchas de las asignaturas requerían cierto trabajo de investigación por parte del alumno. Los profesores aportaban ideas y conocimientos para que fuese el propio alumno quien llegase a una solución válida, potenciando de esta manera el aumento de la capacidad autodidacta.
- \item Por ultimo, se han aplicado los conocimientos en la integración de diferentes tecnologías para lograr crear un Mushup, que integra varias herramientas en una sola. Asignaturas como DAT e ISRH ayudaron en que la herramienta se desarrollase con mayor velocidad.
+  \item Una de las grandes habilidades que me ha aportado el TFM, es el aumento de la capacidad autodidacta que todo trabajo de investigación requiere. Durante el máster, muchas de las asignaturas requerían cierto trabajo de investigación por parte del alumno. Los profesores aportaban ideas y conocimientos para que fuese el propio alumno quien llegase a una solución válida, potenciando de esta manera el aumento de la capacidad autodidacta.
+ \item Por último, se han aplicado los conocimientos en la integración de diferentes tecnologías para lograr crear un Mushup, que integra varias herramientas en una sola. Asignaturas como DAT e ISRH ayudaron en que la herramienta se desarrollase con mayor velocidad.
 \end{enumerate}
 
 
@@ -1269,7 +1271,7 @@ Por tanto, puedo enumerar cuales han sido los conocimientos y/o habilidades adqu
    \item Comprensión del estado actual en el que se encuentra el campo de conocimiento tratado en este TFM, el Bug Seeding.
    \item Aprendizaje de la metodología de trabajo que posee un gran proyecto como es OpenStack, entendiendo el uso de herramientas como Launchpad y Gerrit en dicho proyecto.
    \item Creación de una APIRestFul necesaria en nuestra herramienta.
-   \item Montar un servidor node en una maquina virtual que albergue nuestra herramienta. (todavía no está hecho )
+   \item Montar un servidor node en una maquina virtual que albergue nuestra herramienta. 
    \item Describir una metodología detallada y precisa, de tal manera que pueda ser automatizada, facilitando el estudio a los desarrolladores.
    \item Adentrarme en el entendimiento del lenguaje, desconocido para mi, Python.
 \end{enumerate}
@@ -1277,7 +1279,8 @@ Por tanto, puedo enumerar cuales han sido los conocimientos y/o habilidades adqu
 Las lecciones que puedo sacar tras todo el trabajo realizado en el TFM son:
 \begin{enumerate}
 \item En los primeros meses de la investigación, el deseo de obtener los primeros resultados con la mayor rapidez posible, provocó una pérdida tiempo analizando tickets sin llegar a entender en profundidad cual era el objetivo final. Teniendo que repetir, en varias ocasiones, el análisis. Por tanto, entendí que es más importante dedicar el tiempo necesario a entender los objetivos y el problema que se plantea antes de conseguir resultados rápidos.
-\item  Analizar cual son las necesidades que tenemos y como la tecnología nos facilita el trabajo.
+\item Analizar cual son las necesidades que tenemos y como la tecnología nos facilita el trabajo.
+\item Comprender el estado del arte actual para entender como ayuda nuestra investigación en él.
 \end{enumerate}
 
 \section{Trabajos futuros}
@@ -1289,7 +1292,7 @@ Por todo ello, los trabajos futuros en la investigación son:
 \begin{itemize}
 	\item Extender la investigación a otros componentes de OpenStack.
 	\item Experimentar con los datos obtenidos y el machine learning en busca de características claves que nos ayuden a tomar la clasificar los tickets con la mayor precisión posible.
-	\item Obtener información más detallada sobre los commits y los ficheros involucrados, ya que podríamos obtener nuevas relaciones que nos ayuden en un futuro para predecir si el commit es responsable o no. Actualmente, no hemos realizado la extracción de dichas características en nuestro estudio.
+	\item Obtener información más detallada sobre los commits y los ficheros involucrados, ya que podríamos obtener nuevas relaciones que nos ayuden en un futuro para predecir si el commit es el causante o no. Actualmente, no hemos realizado la extracción de dichas características en nuestro estudio.
 	\item Añadir nuevos campos para analizar, como son la hora, el día de la semana ó incluso en nombre del responsable de introducir el commit para encontrar alguna relación en el momento de introducir el error en el código.  
 \end{itemize}
 
